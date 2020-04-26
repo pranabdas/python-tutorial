@@ -78,14 +78,15 @@ plt.show()
 How can I append another plot on the same figure? 
 ```python 
 y2 = x**3; 
-plt.plot(x, y, 'ro-')
-plt.plot(x, y2, 'g*-')
-plt.title('My simple plot')  
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.xlim(1, 10.5)
-plt.ylim(1, 1200)
-plt.show()
+plt.plot(x, y, 'ro-', label='y'); 
+plt.plot(x, y2, 'g*-', label='y2'); 
+plt.title('My simple plot'); 
+plt.xlabel('X'); 
+plt.ylabel('Y'); 
+plt.legend(); 
+plt.xlim(1, 10.5); 
+plt.ylim(1, 1200); 
+plt.show(); 
 ``` 
 ![x vs. y plot](../img/mpl-x-vs-y-6.png) 
 

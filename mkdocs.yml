@@ -1,6 +1,5 @@
 site_name: Learning Python  
-repo_url: https://github.com/pranabdas/
-repo_name: Homepage 
+repo_url: https://pranabdas.github.io
 site_description: My notes on learning python. 
 site_author: Pranab Das 
 
@@ -25,6 +24,10 @@ nav:
     - Basic Matplotlib: matplotlib/matplotlib.md 
     - Image plot: matplotlib/image-plot.md 
     - Create custom color map: matplotlib/custom-color-map.md 
+    - Function plot: matplotlib/function-plot.md 
+  - scipy: 
+    - Integration using scipy: scipy/integration.md 
+    - Convolution: scipy/convolution.md 
   - Pandas:
     - Pandas Series and Dataframe: pandas/pandas.md 
   - Misc: 
@@ -47,6 +50,7 @@ theme:
 
 markdown_extensions:
   - pymdownx.arithmatex 
+  - attr_list 
 
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML 
