@@ -1,44 +1,51 @@
-site_name: Learning Python  
-repo_url: https://pranabdas.github.io
-site_description: My notes on learning python. 
-site_author: Pranab Das 
+site_name: Learning Python
+repo_url: https://pranabdas.github.io/
+site_description: My notes on learning python.
+site_author: Pranab Das
 
 nav:
-  - Home: index.md 
-  - The Basics: 
-    - Introduction: introduction/introduction.md 
-    - Setting up: introduction/setup.md 
-    - Get started: introduction/basics.md 
-    - More on string formatting: introduction/string-formatting.md 
-    - Python Lists and Tuple: introduction/list-and-tuple.md 
-    - Dictionary: introduction/dictionary.md 
-    - 'if-else condition': introduction/if-else.md 
-    - "while loop, break, continue": introduction/while-loop.md 
-    - Simple function: introduction/function.md 
-    - 'File read-write': introduction/file-read-write.md
-    - Python class: introduction/class.md
-    - Python packages: introduction/python-packages.md 
-  - Numerical Python: 
-    - numpy: numerical-python/numpy.md 
-  - Matplotlib: 
-    - Basic Matplotlib: matplotlib/matplotlib.md 
-    - Image plot: matplotlib/image-plot.md 
-    - Create custom color map: matplotlib/custom-color-map.md 
-    - Function plot: matplotlib/function-plot.md 
-  - scipy: 
-    - Integration using scipy: scipy/integration.md 
-    - Convolution: scipy/convolution.md 
-  - Pandas:
-    - Pandas Series and Dataframe: pandas/pandas.md 
-  - Misc: 
-    - Miscellaneous: misc/misc.md
-    - Read data from url: misc/read-data-url.md 
-  - Projects: 
-    - Singapore traffic camera: projects/singapore-traffic-camera.md
+    - Table of Contents: index.md
+    - The Basics:
+          - Introduction: introduction/introduction.md
+          - Setting up: introduction/setup.md
+          - Get started: introduction/basics.md
+          - More on string formatting: introduction/string-formatting.md
+          - Python Lists and Tuple: introduction/list-and-tuple.md
+          - Dictionary: introduction/dictionary.md
+          - "if-else condition": introduction/if-else.md
+          - "while loop, break, continue": introduction/while-loop.md
+          - Simple function: introduction/function.md
+          - "File read-write": introduction/file-read-write.md
+          - Python class: introduction/class.md
+          - Python packages: introduction/python-packages.md
+    - Numerical Python:
+          - numpy: numerical-python/numpy.md
+    - Matplotlib:
+          - Basic Matplotlib: matplotlib/matplotlib.md
+          - Subplots: matplotlib/subplot.md
+          - Image plot: matplotlib/image-plot.md
+          - Create custom color map: matplotlib/custom-color-map.md
+          - Function plot: matplotlib/function-plot.md
+          - Customizing Matplotlib: matplotlib/custom-matplotlib.md
+    - scipy:
+          - Integration using scipy: scipy/integration.md
+          - Convolution: scipy/convolution.md
+    - Pandas:
+          - Pandas Series and Dataframe: pandas/pandas.md
+    - Data Science:
+          - Data Exploration: data-science/data-exploration.md
+          - Linear regression: data-science/linear-regression.md
+    - Geopands:
+          - Geo-maps: geopandas/maps.md
+    - Misc:
+          - Miscellaneous: misc/misc.md
+          - Read data from url: misc/read-data-url.md
+    - Projects:
+          - Singapore traffic camera: projects/singapore-traffic-camera.md
 
-theme: 
-    name: null 
-    custom_dir: simplicity  
+theme:
+    name: null
+    custom_dir: simplicity
     static_templates:
         - 404.html
 
@@ -46,15 +53,14 @@ theme:
     search_index_only: false
 
     highlightjs: true
-    hljs_languages: python 
+    hljs_languages: [python]
 
 markdown_extensions:
-  - pymdownx.arithmatex 
-  - attr_list 
+    - pymdownx.arithmatex
+    - attr_list
 
 extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
 
-copyright: © Copyright 2020 Pranab Das. All rights reserved. 
-
+copyright: © Copyright 2020 Pranab Das. All rights reserved.
 # google_analytics: [UA-163317742-1, https://pranabdas.github.io/]

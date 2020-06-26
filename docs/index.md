@@ -1,6 +1,6 @@
 ### Learning Python 
 
-I took these notes while learning Python myself. I still use them for my reference. You might find them useful while learning yourself. You can download all the Notebooks used for this tutorial from my GitHub page <https://github.com/pranabdas/python-docs> 
+I took these notes while learning Python myself. I still use them for my reference. You might find them useful while learning yourself. You can download all the Notebooks used for this tutorial from my GitHub page [https://github.com/pranabdas/python-learning](https://github.com/pranabdas/python-learning){:target="_blank"}
 
 Table of content: 
 
@@ -19,17 +19,21 @@ Table of content:
 + Numerical Python 
     - [numpy](numerical-python/numpy.md) 
 + [Matplotlib](matplotlib/matplotlib.md) 
+    - [Subplots](matplotlib/subplot.md) 
     - [Image plot](matplotlib/image-plot.md) 
     - [Create custom color map](matplotlib/custom-color-map.md) 
     - [Function plot](matplotlib/function-plot.md) 
+    - [Customizing Matplotlib](matplotlib/custom-matplotlib.md) 
 + scipy 
     - [Integration](scipy/integration.md) 
     - [Convolution](scipy/convolution.md) 
 + [Pandas Series and Dataframe](pandas/pandas.md) 
++ Data Science
+    - [Basic data exploration](data-science/data-exploration.md)
+    - [Linear regression](data-science/linear-regression.md)
++ Geopandas
+    - [Basic geo-mapping with geopandas and bokeh](geopandas/maps.md)
 + [Miscellaneous](misc/misc.md) 
     - [Read data from url](misc/read-data-url.md) 
 + Projects 
     - [Singapore traffic camera](projects/singapore-traffic-camera.md)
-
-
-If you have any feedback, suggestions, please let me know. You can find my contact information in my [homepage](https://pranabdas.github.io) 
