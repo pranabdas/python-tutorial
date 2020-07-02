@@ -637,7 +637,7 @@ data_copy = data.dropna(subset=["engine-size"], axis=0)
 data_copy = data_copy.dropna(subset=["price"], axis=0)
 
 lm = LinearRegression()
-X = data_copy[["engine-size"]] 
+X = data_copy["engine-size"] 
 Y = data_copy["price"] 
 lm.fit(X, Y)
 
