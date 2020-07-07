@@ -28,6 +28,7 @@ Table of content:
     - [Integration](scipy/integration.md) 
     - [Convolution](scipy/convolution.md) 
 + [Pandas Series and Dataframe](pandas/pandas.md) 
+    - [Read/write CSV and excel files](pandas/csv-excel.md) 
 + Data Science
     - [Basic data exploration](data-science/data-exploration.md)
     - [Linear regression](data-science/linear-regression.md)

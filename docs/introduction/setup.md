@@ -15,12 +15,7 @@ You can download all the Notebooks used for this tutorial from my GitHub page [h
 We will use following packages: 
 ```
 pip3 install jupyterlab
-pip3 install numpy
-pip3 install scipy
-pip3 install matplotlib 
-pip3 install bokeh 
-pip3 install seaborn
-pip3 install pandas
-pip3 install geopandas
-pip3 install xlrd
+pip3 install numpy scipy
+pip3 install matplotlib bokeh seaborn
+pip3 install pandas geopandas xlrd openpyxl
 ```

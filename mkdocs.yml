@@ -32,6 +32,7 @@ nav:
           - Convolution: scipy/convolution.md
     - Pandas:
           - Pandas Series and Dataframe: pandas/pandas.md
+          - CSV and excel: pandas/csv-excel.md
     - Data Science:
           - Data Exploration: data-science/data-exploration.md
           - Linear regression: data-science/linear-regression.md
