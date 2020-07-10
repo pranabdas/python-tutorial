@@ -38,3 +38,5 @@ Table of content:
     - [Read data from url](misc/read-data-url.md) 
 + Projects 
     - [Singapore traffic camera](projects/singapore-traffic-camera.md)
+    - [AES-256 encryption of directory recursively](projects/directory-encryption.md)
+    - [Encrypt files before backing up in Dropbox](projects/encrypt-upload-dropbox.md)

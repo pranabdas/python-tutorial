@@ -43,6 +43,8 @@ nav:
           - Read data from url: misc/read-data-url.md
     - Projects:
           - Singapore traffic camera: projects/singapore-traffic-camera.md
+          - AES-256 encryption: projects/directory-encryption.md 
+          - Encrypt and upload to Dropbox: projects/encrypt-upload-dropbox.md
 
 theme:
     name: null
@@ -63,5 +65,5 @@ markdown_extensions:
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
 
-copyright: © Copyright 2020 Pranab Das. All rights reserved.
+copyright: " "
 # google_analytics: [UA-163317742-1, https://pranabdas.github.io/]
