@@ -18,6 +18,7 @@ nav:
           - "File read-write": introduction/file-read-write.md
           - Python class: introduction/class.md
           - Python packages: introduction/python-packages.md
+          - Virtual environment: introduction/venv.md
     - Numerical Python:
           - numpy: numerical-python/numpy.md
     - Matplotlib:
@@ -29,7 +30,8 @@ nav:
           - Customizing Matplotlib: matplotlib/custom-matplotlib.md
     - scipy:
           - Integration using scipy: scipy/integration.md
-          - Convolution: scipy/convolution.md
+          - Convolution: scipy/convolution.md 
+          - Curve fitting: scipy/curve-fit.md 
     - Pandas:
           - Pandas Series and Dataframe: pandas/pandas.md
           - CSV and excel: pandas/csv-excel.md
@@ -38,6 +40,8 @@ nav:
           - Linear regression: data-science/linear-regression.md
     - Geopands:
           - Geo-maps: geopandas/maps.md
+    - Django:
+          - Django: django/django.md
     - Misc:
           - Miscellaneous: misc/misc.md
           - Read data from url: misc/read-data-url.md

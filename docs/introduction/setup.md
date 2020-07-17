@@ -18,4 +18,5 @@ pip3 install jupyterlab
 pip3 install numpy scipy
 pip3 install matplotlib bokeh seaborn
 pip3 install pandas geopandas xlrd openpyxl
+pip3 install virtualenv
 ```

@@ -16,6 +16,7 @@ Table of content:
     - [File read-write](introduction/file-read-write.md) 
     - [Python class](introduction/class.md) 
     - [Installing and Using Python packages](introduction/python-packages.md) 
+    - [Virtual environment](introduction/venv.md)
 + Numerical Python 
     - [numpy](numerical-python/numpy.md) 
 + [Matplotlib](matplotlib/matplotlib.md) 
@@ -27,6 +28,7 @@ Table of content:
 + scipy 
     - [Integration](scipy/integration.md) 
     - [Convolution](scipy/convolution.md) 
+    - [Curve fitting](scipy/curve-fit.md)
 + [Pandas Series and Dataframe](pandas/pandas.md) 
     - [Read/write CSV and excel files](pandas/csv-excel.md) 
 + Data Science
@@ -34,6 +36,7 @@ Table of content:
     - [Linear regression](data-science/linear-regression.md)
 + Geopandas
     - [Basic geo-mapping with geopandas and bokeh](geopandas/maps.md)
++ [Django](django/django.md)
 + [Miscellaneous](misc/misc.md) 
     - [Read data from url](misc/read-data-url.md) 
 + Projects 
