@@ -20,3 +20,13 @@ pip3 install matplotlib bokeh seaborn
 pip3 install pandas geopandas xlrd openpyxl
 pip3 install virtualenv
 ```
+
+Check outdated pip packages:
+```
+pip list --outdated
+```
+
+Upgrade pip packages:
+```
+pip install <package-name> --upgrade
+```

@@ -36,7 +36,11 @@ Table of content:
     - [Linear regression](data-science/linear-regression.md)
 + Geopandas
     - [Basic geo-mapping with geopandas and bokeh](geopandas/maps.md)
-+ [Django](django/django.md)
++ [Building Web apps using Django](django/django.md)
+    - [Today app](django/today.md)
+    - [To Do List App](django/todo.md)
+    - [Airline App](django/airline.md)
+    - [Learning log webapp](django/learning-log.md)
 + [Miscellaneous](misc/misc.md) 
     - [Read data from url](misc/read-data-url.md) 
 + Projects 

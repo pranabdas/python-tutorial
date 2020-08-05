@@ -1,6 +1,6 @@
 ### Building webapp using django 
 
-First of make sure you have `virtualenv` [installed](../introduction/venv.md). Create a new project directory, and activate `venv`:
+Django is a python web framework that helps you build rich interactive web apps. Mozilla, Dropbox, Instagram, Wikipedia, Spotify are some of the websites built using Django. First of make sure you have `virtualenv` [installed](../introduction/venv.md), it helps keep your project dependencies separate. Create a new project directory, and activate virtualenv:
 ```py
 mkdir django-project
 cd django-project
@@ -8,49 +8,22 @@ virtualenv venv
 source venv/bin/activate
 ```
 
-Now we should be in virtual environment, you should see `venv>` prompt in the Terminal. Let's install `django` under the venv. 
+Now we should be in virtual environment, you should see `venv>` prompt in the Terminal. You can exit virtualenv by entering `deactivate`. Let's install `django` under the venv. 
 ```py
 pip3 install django
 ```
-
-- Creating a Project in Django: 
+Once Django is installed, we can create our django project, let's call it myWebApp.
 ```py
-django-admin.py startproject learning_log .
+django-admin startproject myWebApp .
 ```
-Our project is called `learning_log`. 
+Note the `.` in the end, which creates the project in our current directory, otherwise it will create another extra top level folder. You have to be mindful of your directory structure when you deploy it in a server.
 
-- Creating a database for the project:
+Django projects are collection of apps. Say, we want to create an app called hello, which says hello when visited /hello url. We can create our hello app by:
 ```py
-python3 manage.py migrate
-```
-Now you will see a new file called `db.sqlite3` in the directory.
-
-- Viewing the Project:
-```py
-python3 manage.py runserver
-```
-You can visit `localhost:8000` in your browser, and you should see a default django webpage. Django project is consists of a set of individual apps. In order to start an app: 
-```
-python3 manage.py startapp learning_logs
-```
-We call our app `learning_logs`. Check all the directory structure. 
-
-##### Creating models
-Open `learning_logs/models.py` and define a model:
-```py
-class Topic(models.Model):
-    """A topoic the user is learning about."""
-    text = models.CharField(max_length=200)
-    date_added = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        """Return a string representation of the model"""
-        return self.text
+django-admin startapp hello
 ```
 
-##### Activating models
-
-Open `learning_log/settings.py` add `learning_logs` app to the list of `INSTALLED_APPS` list:
+We have to tell our Django project that we have a new app. Open `myWebApp/settings.py` and add hello to the `INSTALLED_APPS` list. You will see a number of default apps already registered there. 
 ```py
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -60,109 +33,83 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # My apps
-    'learning_logs',
+    # my apps
+    'hello',
 ]
 ```
 
-- Make the migration to take changes effect:
+Create urls. It's like a table of content. We want to keep the urls of each app separated. Create `hello/urls.py` and include: 
 ```py
-python3 manage.py makemigrations learning_logs
-python3 manage.py migrate
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.hello, name='hello'),
+]
 ```
 
-##### Create superuser
-```py
-python3 manage.py createsuperuser
-```
-Provide username and password. 
-
-- Registering a model with the admin site: Open `learning_logs/admin.py` and add the following:
-```py 
-from learning_logs.models import Topic
-
-admin.site.register(Topic)
-```
-
-Now we can start the server `python3 manage.py runserver` and login to `localhost:8000/admin` and create Topics. 
-
-Let's define another model for the Entry. Open `learning_logs/models.py` and define a model for *Entry*. 
-```py
-class Entry(models.Model):
-    """Something specific learned about a topic"""
-    topic = models.ForeignKey(Topic, on_delete=models.DO_NOTHING,)
-    text = models.TextField()
-    date_added = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name_plural = 'entries'
-    def __str__(self):
-        """Return a string representation of the model."""
-        return self.text[:50] + "..."
-```
-
-Make changes to the `learning_logs/admin.py`: 
-```py
-from django.contrib import admin
-
-from learning_logs.models import Topic
-from learning_logs.models import Entry
-
-admin.site.register(Topic)
-admin.site.register(Entry)
-```
-
-Make migrations: 
-```py
-python3 manage.py makemigrations learning_logs
-python3 manage.py migrate
-```
-You can start server and check out the new changes. 
-
-##### Creating pages
-Creating pages has three steps: (1) Mapping URL, (2) Writing views, (3) Writing templates. 
-
-**Mapping URL:** Open `learning_log/urls.py` and include the following:
+Now we have to add the hello app urls in our main project. Open `myWebApp/urls.py` and add the following:
 ```py
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('learning_logs.urls'))
+    path('hello/', include('hello.urls'))
 ]
 ```
 
-Create another urls.py in the directory learning_logs and include the following:
-```py
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.index, name='index'),
-]
-```
-
-Open `learning_logs/views.py` and add the following:
+Next step is to create views. Go to `hello/views.py` and add following function:
 ```py
 from django.shortcuts import render
 
- def index(request):
-     """The home page for Learning Log"""
-     return render(request, 'learning_logs/index.html')
+def hello(request):
+    """hello page"""
+    return render(request, 'hello/index.html')
 ```
 
-We will store the templates in the following directory: `learning_logs/templates/learning_logs`. Create an `learning_logs/templates/learning_logs/index.html`:
+Final step is to create the index.html. We create `hello/templates/hello/index.html`
 ```html
 <html>
-    < head>
-        <title>Learning log</title>
+        < head>
+                <title>Hello django</title>
+        < /head>
         <body>
-            <h3>Learning Log</h3>
-            <p>Learning Log helps you keep track of your learning, for any topic you're learning about.</p>
-        </body>
-    < /head>
-</html>
+                <h1>Hello Django!</h1>
+        </body> 
+</html> 
 ```
 
-Notice that there is an extra space in the `head` tags, please remove the spaces in your code (my website search function has some issues with the `head` tag, and I am using this workaround to counter the error currently). We can browse the homepage `localhost:8000` and see the index page. 
+Note that in the above code block there is an extra space in `head` tags, please remove the spaces in your actual code (my website search function has some issues with the `head` tag, and I am using this workaround to counter the error currently).
+
+Now we can run our django server :
+```py
+python3 manage.py runserver
+```
+and visit <localhost:8000/hello> in our browser. This is our simplest hello app. Now let's say we want to greet a specific user by his/her name. We could create individual user pages, or we can take the url argument and generate a page based on that argument. We write the following view function (`hello/views.py`):
+```py
+def greet(request, name):
+    """greet anyone"""
+    return render(request, 'hello/greet.html', {
+        "name": name.capitalize()
+        })
+```
+Create `hello/templates/hello/greet.html`: 
+```html
+<html>
+        < head>
+                <title>Welcome</title>
+        < /head>
+        <body>
+                <h1>Hello {{ name }}!</h1>
+        </body> 
+</html> 
+```
+
+Go to `hello/urls.py` and include:
+```py
+path('/<str:name>', views.greet, name='greet'),
+```
+Now we can `python3 manage.py runserver` and visit an arbitrary url <localhost:8000/hello/albert>. 
+
+Learn more: [https://docs.djangoproject.com/](https://docs.djangoproject.com/){:target="_blank"}

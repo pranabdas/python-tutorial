@@ -42,6 +42,10 @@ nav:
           - Geo-maps: geopandas/maps.md
     - Django:
           - Django: django/django.md
+          - Today app: django/today.md
+          - To Do List App: django/todo.md
+          - Airline app: django/airline.md
+          - Django learning log: django/learning-log.md
     - Misc:
           - Miscellaneous: misc/misc.md
           - Read data from url: misc/read-data-url.md
@@ -68,3 +72,5 @@ markdown_extensions:
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML
+
+dev_addr: '127.0.0.1:8001'
