@@ -320,3 +320,226 @@ gdp_life_expectancy_2015.loc[gdp_life_expectancy_2015['Life expectancy '] > 85]
   </tbody>
 </table>
 </div>
+
+We can read data from url as well. By default, Pandas csv import assumes our data file has a header. If we do not have a header, we need to explicitly set the header to none. 
+
+```py
+import pandas as pd 
+url = http://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data
+df = pd.read_csv(url, header = None)
+``` 
+
+We can have a look at the imported data by following methods: 
+```py 
+df.head()     # first 5 rows of the dataframe
+df.head(10)   # first 10 rows
+df.tail()     # last 5 rows 
+```
+
+Without the column headers, it is difficult to identity the columns. For our car data the headers can be found on a separate file. You can download the file and have a look into it to figure out what each column represents. Here is another way to do the same:  
+```py 
+import urllib
+url = "http://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.names"
+headers = {'User-Agent': 'Mozilla/5.0'}
+req = urllib.request.Request(url = url, headers = headers)
+data = urllib.request.urlopen(req).read().decode() 
+data.split("\n")        # this is not recommended for very big dataset 
+data.split("\n")[:20]   # first 20 items of the list
+data.split("\n")[-20:]  # last 20 items of the list 
+``` 
+
+From above methods, we can find out the headers for our data set, and assign to our dataframe: 
+```py 
+headers = ["symboling", "normalized-losses", "make", "fuel-type", "aspiration",\
+          "num-of-doors", "body-style", "drive-wheels", "engine-location",\
+          "wheel-base", "length", "width", "height", "curb-weight", "engine-type",\
+          "num-of-cylinders", "engine-size", "fuel-system", "bore", "stroke",\
+          "compression-ratio", "horsepower", "peak-rpm", "city-mpg", "highway-mpg",\
+          "price"]
+df.columns = headers
+df.head()
+```
+
+Renaming a column:
+```py 
+df["city-mpg"] = 235/df["city-mpg"]
+df.rename(columns={"city_mpg" : "city-L/100km"}, inplace=True)
+```
+
+We can save our data with the headers: 
+```py
+df.to_csv("/Users/Pranab/Desktop/car_data.csv", index=None)
+``` 
+
+There are few other common formats: 
+
+| Format  | Read            | Save          |
+| :------ | :-------------- | :------------ |
+| csv     | pd.read_csv()   | df.to_csv()   |
+| json    | pd.read_json()  | df.to_json()  |
+| excel   | pd.read_excel() | df.to_excel() |
+| sql     | pd.read_sql()   | df.to_sql()   |
+
+
+**Data types in Pandas:** 
+```py
+df.dtypes
+``` 
+
+The default pandas data import may not assign the correct data type. In that case we need to convert correct data type manually. But, before we do that we may need to do some cleanup. We will see that many of entries in our data is missing or not available. For example, many entries in our car data is "?". Many of the python functions and methods will result in error if we proceed with such entries. In the first attempt, we many replace the "?" by "NaN". 
+```py 
+df.replace("?", "NaN", inplace=True) 
+df["price"] = df["price"].astype("float")
+df.dtypes
+```
+
+And we will see that we have correctly applied float type to our price column. Now let's have a overview of our dataset: 
+```py 
+df.describe()
+```
+
+If we want to see some basis statistics on Object columns as well: 
+```py 
+df.describe(include="all")
+```
+
+Following method can also be helpful:
+```py 
+df.info()
+```
+
+**Strategy for missing data:** 
+
+- Drop the row if there is a missing value. 
+- Replace/insert values for missing value. Inserting average of the whole dataset. If the datatype is categorical, we can replace by the most occurring data entry. 
+
+Drop missing values using **dropna** method: 
+```py 
+df.dropna(subset=["price"], axis=0, inplace=True)
+```
+`axis=1` for dropping column. 
+
+We can replace the missing values if appropriate: 
+```py
+import numpy as np
+df["horsepower"] = df["horsepower"].astype("float")
+mean = df["horsepower"].mean()
+df["horsepower"].replace(np.nan, mean, inplace=True)
+```
+
+**Data normalization:** 
+
+When we work with different kind of data say car price and horse power, the prices are ranged from 5,000 - 50,000 USD while horse power maybe 20 to 200. If we use these two features to build a model, the price will influence the model more because of its higher values. In such cases we may need to normalize both data in similar ranges. Say we normalize both the columns in the range [0, 1]. 
+```py 
+# simple scaling 
+df["price"] = df["price"]/df["price"].max()
+
+# min-max
+df["price"] = (df["price"] - df["price"].mean())/(df["price"].max() - df["price"].min())
+
+# z-score 
+df["price"] = (df["price"] - df["price"].mean())/df["price"].std()
+```
+
+**Data binning:** 
+
+Say we want to categorize our price in to low, medium, and high price cars: 
+
+```py
+bins = np.linspace(df["price"].min(), df["price"].max(), 4)
+categories = ["low", "medium", "high"]
+df["price-binned"] = pd.cut(df["price"], bins, labels=categories, include_lowest=True)
+```
+
+#### More methods for data exploration 
+
+**value_counts():** 
+
+```py 
+drive_wheels_counts = df["drive-wheels"].value_counts()
+drive_wheels_counts 
+```
+
+**Groupby():** 
+
+```py
+df_copy = df[["drive-wheels", "body-style", "price"]]
+df_grp = df_copy.groupby(["drive-wheels"], as_index=False).mean()
+df_grp
+```
+
+We can groupby() using multiple variables: 
+```py 
+df_grp = df_copy.groupby(["drive-wheels", "body-style"], as_index=False).mean()
+df_grp
+```
+
+**Pivot() table:** 
+
+```py
+df_pivot = df_grp.pivot(index="drive-wheels", columns="body-style")
+df_pivot
+```
+
+**Heatmap:** 
+
+```py
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+plt.pcolor(df_pivot, cmap="RdBu")
+plt.colorbar()
+plt.show()
+```
+
+![heatmap plot](../img/heatmap.png) 
+
+**Analysis of Variance (ANOVA):** 
+
+```py 
+df_copy = df[["make", "price"]]
+df_grp = df_copy.groupby(["make"])
+
+from scipy import stats
+
+anova_honda_subaru = stats.f_oneway(df_grp.get_group("honda")["price"], \
+                                    df_grp.get_group("subaru")["price"])
+print(anova_honda_subaru)
+```
+
+Output:
+```
+F_onewayResult(statistic=0.19744030127462606, pvalue=0.6609478240622193)
+```
+
+Similarly: 
+```py 
+anova_honda_jaguar = stats.f_oneway(df_grp.get_group("honda")["price"], \
+                                    df_grp.get_group("jaguar")["price"])
+print(anova_honda_jaguar)
+```
+
+Output: 
+```
+F_onewayResult(statistic=400.925870564337, pvalue=1.0586193512077862e-11)
+```
+
+**Pearson Correlation coefficient:** 
+
+```py 
+p_coef, p_val = stats.pearsonr(df["horsepower"], df["price"]) 
+print (p_coef, p_val)
+```
+
+Output: 
+```
+0.8096811975632288 6.058444649710002e-48
+```
+
+- Pearson correlation coefficient +1 : positive correlation 
+- Pearson correlation coefficient -1 : negative correlation 
+- Pearson correlation coefficient 0 : no correlation 
+- Pvalue < 0.001 : strong certainty 
+- Pvalue > 0.1 : no certainty 
+
+We can create correlation heatmaps between various parameters. 

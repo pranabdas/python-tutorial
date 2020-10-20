@@ -8,3 +8,10 @@ Unfortunately, some settings are not correctly applied while using `%matplotlib 
 plt.rcParams["figure.figsize"] = (8, 6)
 plt.rcParams["figure.dpi"] = 150
 ```
+
+#### Interactive backend 
+If you want interactive plots, like ability to zoom, pan, read cursor position ect., you can use notebook backend in your jupyter notebook: 
+
+```
+%matplotlib notebook
+```

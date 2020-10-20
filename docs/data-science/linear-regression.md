@@ -1,6 +1,16 @@
 ### Linear regression 
 
-Here we will use a data set of used car prices. The data was downloaded from [http://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data](http://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data){:target="_blank"}. You can find a copy [here](https://pranabdas.github.io/drive/downloads/datasets/car-price.csv){:target="_blank"} as well. 
+We find a line for which the mean squared error is least. 
+
+$$ MSE (a, b) = \frac{1}{n} \sum_i^n (y_i - (ax_i + b))^2  $$ 
+
+The solution for $a$ and $b$ has nice forms (bar denotes the average): 
+
+$$ b = \bar{y} - a \bar{x}  $$ 
+
+$$ a = \frac{\sum_i^n (y_i - \bar{y})(x_i - \bar{x})}{\sum_i^n (x_i - \bar{x})^2}  $$ 
+
+Here we will use a data set of used car prices. The data was downloaded from [http://archive.ics.uci.edu/ml/machine-learning-databases/autos/](http://archive.ics.uci.edu/ml/machine-learning-databases/autos/){:target="_blank"}. You can find a copy [here](https://pranabdas.github.io/drive/downloads/datasets/car-price.csv){:target="_blank"} as well. 
 
 ```python
 import pandas as pd
@@ -625,8 +635,17 @@ plt.show()
 ```
 
 
-![png](../img/pandas-linear-regression.png)
+![linear regression plot](../img/pandas-linear-regression.png)
 
+**Residual Plot:**
+
+We can plot the errors to see if our model is good fit for the data or whether the residual plot shows certain trends. 
+
+```py
+sns.residplot(x="engine-size", y="price", data=df)
+plt.show()
+```
+![residual plot](../img/pandas-residual-plot.png) 
 
 
 ```python
@@ -657,3 +676,50 @@ print(pearson_coef, p_values)
 ```
 
     0.8723351674455185 9.265491622198389e-64
+
+**Distribution plot:** 
+
+Compare predicted data to the actual test data. 
+```py 
+ax1 = sns.distplot(df["price"], hist=False, color="r", label="test data")
+sns.distplot(Yhat, hist=False, color="b", label="Predicted values", ax=ax1)
+```
+
+**Linear Regression Model in Scikit learn:** 
+
+```py
+from sklearn.linear_model import LinearRegression 
+lm = LinearRegression()
+lm.fit(df[["horsepower"]], df[["price"]])
+print(lm.intercept_, lm.coef_)
+lm.predict(np.array([[250]])) 
+```
+
+**Multiple liner regression:** 
+
+Instead of one dependent variable we can include multiple variables. 
+
+$$ y = b_0 + b_1 x_1 + b_2 x_2 + ... $$ 
+
+Where X is values for ["horsepower", "curb-weight", "engine-size", "highway-mpg"]. Let's do it with two variables: 
+
+```py
+df["highway-mpg"] = df["highway-mpg"].astype("float")
+mean = df["highway-mpg"].mean()
+df["highway-mpg"].replace(np.nan, mean, inplace=True)
+
+Z = df[['horsepower', 'highway-mpg']]
+lm.fit(Z, df[['price']]); 
+print(lm.coef_, lm.intercept_)
+lm.predict(np.array([[150, 30]]))
+```
+
+**Polynomial regression:** 
+
+$$ \hat{Y} = b_0 + b_1 x_1 + b_2 (x_2)^2 + b_3 (x_3)^3 + ... $$ 
+
+```py
+f = np.polyfit(df["horsepower"], df["price"], 3)  # third order poly
+p = np.poly1d(f)
+print(p)
+```
