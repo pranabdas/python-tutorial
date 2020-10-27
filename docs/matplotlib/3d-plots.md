@@ -108,8 +108,8 @@ ax.plot_surface(Z6-Z6+xp, Y6, -Z6-zp6, facecolors=mapped_M_right,
 
 ax.plot([xp2, xp2+xp2/2, xp, xp2, xp2, xp, xp, xp, xp, xp, xp], \
         [0, 0, 0, -yp2/2+1, -yp2+1, yp-1, yp/2, yp-1, yp-1, yp-1, yp-1], \
-        [-zp3, -zp3, -zp3, -zp3, -zp3, -zp3, -zp3, -zp3*0.25, -zp3*0.50, -zp3*0.75, 0], \
-        '+', c='k', markersize= 10)
+        [-zp3, -zp3, -zp3, -zp3, -zp3, -zp3, -zp3, -zp3*0.25, -zp3*0.50, \
+        -zp3*0.75, 0], '+', c='k', markersize= 10)
 
 ax.set_zlim3d([-250, 50])
 plt.axis('off')

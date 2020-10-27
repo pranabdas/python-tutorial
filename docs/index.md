@@ -27,8 +27,8 @@ Table of content:
     - [Image plot](matplotlib/image-plot.md) 
     - [Create custom color map](matplotlib/custom-color-map.md) 
     - [Function plot](matplotlib/function-plot.md) 
-    - [Customizing Matplotlib](matplotlib/custom-matplotlib.md) 
     - [Advanced 3D plots](matplotlib/3d-plots.md) 
+    - [Customizing Matplotlib](matplotlib/custom-matplotlib.md) 
 + scipy 
     - [Integration](scipy/integration.md) 
     - [Convolution](scipy/convolution.md) 
@@ -40,17 +40,20 @@ Table of content:
     - [Basic data exploration](data-science/data-exploration.md)
     - [Linear regression](data-science/linear-regression.md) 
 + Machine Learning 
+    - [Machine learning introduction](machine-learning/ml.md) 
     - [Basic probability and statistics](machine-learning/probability-statistics.md)
     - [Nearest neighbor classification](machine-learning/nearest-neighbor.md) 
     - [Generative model](machine-learning/generative-model.md) 
     - [More on regression](machine-learning/regression.md) 
-+ Geopandas
++ Geopandas 
     - [Basic geo-mapping with geopandas and bokeh](geopandas/maps.md)
 + [Building Web apps using Django](django/django.md)
     - [Today app](django/today.md)
     - [To Do List App](django/todo.md)
     - [Airline App](django/airline.md)
     - [Learning log webapp](django/learning-log.md)
++ Database 
+    - [SQL basics](database/sql.md) 
 + [Miscellaneous](misc/misc.md) 
     - [Read data from url](misc/read-data-url.md) 
 + Projects 

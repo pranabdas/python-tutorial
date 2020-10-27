@@ -647,6 +647,7 @@ plt.show()
 ```
 ![residual plot](../img/pandas-residual-plot.png) 
 
+**Linear Regression Model in Scikit learn:** 
 
 ```python
 from sklearn.linear_model import LinearRegression 
@@ -665,7 +666,10 @@ print(lm.intercept_, lm.coef_)
 
     -7963.338906281042 [166.86001569]
 
-
+We can predict Y values for given X: 
+```py
+lm.predict(np.array([[250]]))
+```
 
 ```python
 # Correlation 
@@ -683,16 +687,6 @@ Compare predicted data to the actual test data.
 ```py 
 ax1 = sns.distplot(df["price"], hist=False, color="r", label="test data")
 sns.distplot(Yhat, hist=False, color="b", label="Predicted values", ax=ax1)
-```
-
-**Linear Regression Model in Scikit learn:** 
-
-```py
-from sklearn.linear_model import LinearRegression 
-lm = LinearRegression()
-lm.fit(df[["horsepower"]], df[["price"]])
-print(lm.intercept_, lm.coef_)
-lm.predict(np.array([[250]])) 
 ```
 
 **Multiple liner regression:** 

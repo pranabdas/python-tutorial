@@ -325,7 +325,7 @@ We can read data from url as well. By default, Pandas csv import assumes our dat
 
 ```py
 import pandas as pd 
-url = http://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data
+url = 'http://archive.ics.uci.edu/ml/machine-learning-databases/autos/imports-85.data'
 df = pd.read_csv(url, header = None)
 ``` 
 
@@ -417,7 +417,6 @@ Drop missing values using **dropna** method:
 ```py 
 df.dropna(subset=["price"], axis=0, inplace=True)
 ```
-`axis=1` for dropping column. 
 
 We can replace the missing values if appropriate: 
 ```py

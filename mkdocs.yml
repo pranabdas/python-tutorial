@@ -29,9 +29,9 @@ nav:
           - Contour plot: matplotlib/contour-plot.md 
           - Image plot: matplotlib/image-plot.md
           - Create custom color map: matplotlib/custom-color-map.md
-          - Function plot: matplotlib/function-plot.md
+          - Function plot: matplotlib/function-plot.md 
+          - Advanced 3D plots: matplotlib/3d-plots.md 
           - Customizing Matplotlib: matplotlib/custom-matplotlib.md 
-          - Advanced 3D plots: matplotlib/3d-plots.md
     - scipy:
           - Integration using scipy: scipy/integration.md
           - Convolution: scipy/convolution.md 
@@ -44,6 +44,7 @@ nav:
           - Data Exploration: data-science/data-exploration.md
           - Linear regression: data-science/linear-regression.md
     - Machine Learning: 
+          - ML Introduction: machine-learning/ml.md 
           - Basic Probability and statistics: machine-learning/probability-statistics.md
           - Nearest neighbor classification: machine-learning/nearest-neighbor.md 
           - Generative model: machine-learning/generative-model.md 
@@ -56,6 +57,8 @@ nav:
           - To Do List App: django/todo.md
           - Airline app: django/airline.md
           - Django learning log: django/learning-log.md
+    - Databases: 
+          - SQL basics: database/sql.md
     - Misc:
           - Miscellaneous: misc/misc.md
           - Read data from url: misc/read-data-url.md
