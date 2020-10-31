@@ -1,12 +1,14 @@
 ### Basic probability and statistics 
 
-Expectation value of $x$ = ($\bar{x}$) = $\sum_i^n P(x_i) x_i$.  
+Expectation value $\bar{x} = \sum_i^n P(x_i) x_i$. 
 
-Expectation value of $x^2$ = $\sum_i^n P(x_i) x_i^2$.
+In case of continuous distribution: $\bar{x} = \int_{\infty}^{\infty} x p(x) dx$. 
 
-Standard deviation ($\sigma$) = $\sqrt{Variance}$ = Expectation value of $(x_i - \bar{x})^2$  
+Expectation value of $<x^2>$ = $\sum_i^n P(x_i) x_i^2$.
 
-$\sigma (x) = \bar{x^2} - \bar{x}^2 = <x^2> - <x>^2$ 
+Standard deviation ($\sigma$) = $\sqrt{Variance}$ 
+
+Variance = Expectation value of $(x_i - \bar{x})^2 = <x^2> - <x>^2$ 
 
 **Correlation:** 
 

@@ -44,3 +44,44 @@ Upgrade pip packages:
 ```
 pip install <package-name> --upgrade
 ```
+
+**Python development inside Docker container:** 
+
+An alternative setup option is to run your python development inside a docker container. Here is a sample [Dockerfile](https://github.com/pranabdas/python-learning/blob/master/Dockerfile): 
+
+```dockerfile
+# Start from Ubuntu 20.04 LTS
+FROM ubuntu:focal
+
+# Update OS
+RUN apt update && apt upgrade -y
+
+# Install software packages 
+RUN apt install -y python3 python3-pip fonts-open-sans
+
+# Install pip packages 
+RUN pip3 install jupyterlab numpy scipy matplotlib pandas xlrd openpyxl \
+seaborn scikit-learn
+
+# bashrc settings
+RUN echo 'alias jupyter-notebook="jupyter-notebook --allow-root --no-browser"' \
+>> $HOME/.bashrc
+
+# leave in `/home` which we can map with the host
+WORKDIR /home
+```
+
+Build the docker image: 
+```
+docker build -t pydev .
+```
+
+Run docker with port forwarding and host directory mapping:
+```
+docker run -ti -p 8888:8888 -v ${pwd}:/home pydev bash
+```
+
+Launch Jupyter kernel: 
+```
+jupyter-notebook --ip 0.0.0.0
+```
