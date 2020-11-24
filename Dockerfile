@@ -13,7 +13,7 @@ RUN apt install -y python3 python3-pip fonts-open-sans
 
 # Install pip packages 
 RUN pip3 install jupyterlab numpy scipy matplotlib pandas xlrd openpyxl \
-seaborn scikit-learn
+seaborn scikit-learn missingno
 
 # bashrc settings
 RUN echo 'alias jupyter-notebook="jupyter-notebook --allow-root --no-browser"' \

@@ -15,3 +15,22 @@ If you want interactive plots, like ability to zoom, pan, read cursor position e
 ```
 %matplotlib notebook
 ```
+
+#### Overriding default colors
+```py
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+plt.rcParams["figure.dpi"] = 150
+
+color = ['#CD6155','#808B96','#9B59B6','#99A3A4','#7D6608',\
+         '#F39C12','#2980B9','#16A085','#ABEBC6','#AED6F1']
+
+x = np.linspace(0, 4*np.pi, 100)
+
+for i in range(10):
+    plt.plot(x, (i+1)*np.sin(x))
+plt.show()
+```
+
+![custom-color](../img/custom-color.png) 

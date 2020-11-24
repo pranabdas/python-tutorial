@@ -16,4 +16,4 @@ When the training data is labeled, we call it supervised learning.
 
 **Classification vs. regression:** 
 
-If the labels or result space is discrete, then it is a classification. On the other hand, if the result space is continuous, it is a regression problem. 
+There are two broad types of supervised machine learning problems: classification and regression. If the labels or result space is discrete, then it is a classification. On the other hand, if the result space is continuous, it is a regression problem. 
