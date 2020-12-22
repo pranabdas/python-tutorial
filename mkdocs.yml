@@ -47,6 +47,7 @@ nav:
           - ML Introduction: machine-learning/ml.md 
           - Basic Probability and statistics: machine-learning/probability-statistics.md
           - Nearest neighbor classification: machine-learning/nearest-neighbor.md 
+          - K-nearest neighbor: machine-learning/knn.md 
           - Generative model: machine-learning/generative-model.md 
           - Regression: machine-learning/regression.md 
     - Geopands:

@@ -43,6 +43,7 @@ Table of content:
     - [Machine learning introduction](machine-learning/ml.md) 
     - [Basic probability and statistics](machine-learning/probability-statistics.md)
     - [Nearest neighbor classification](machine-learning/nearest-neighbor.md) 
+    - [K-nearest neighbor](machine-learning/knn.md) 
     - [Generative model](machine-learning/generative-model.md) 
     - [More on regression](machine-learning/regression.md) 
 + Geopandas 

@@ -1,10 +1,12 @@
-### Generative model for classification 
+### Generative (Naive Bayes) model for classification 
 
 Here we fit each class (independently) with a model. Say we have two classes with one dimensional probability distributions $P_1(x)$ and $P_2(x)$. 
 
 Let's say our training set has $\pi_1$ fraction of class one and $\pi_2$ fraction of class two. $\pi_1 + \pi_2 = 1$. 
 
 Now for a new point (x), we predict its class for which $\pi_iP_i(x)$ is maximum. Note that $\pi_i$ is determined based on our training dataset. 
+
+Further reading : [https://scikit-learn.org/stable/modules/naive_bayes.html](https://scikit-learn.org/stable/modules/naive_bayes.html){:target="_blank"}
 
 Let us try to look at it with a practical dataset. I am going to use car price dataset that we used in our [linear regression example](../data-science/linear-regression.md). 
 

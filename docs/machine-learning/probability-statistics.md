@@ -33,3 +33,7 @@ Range for Pearson's coefficient: [-1, 1].
 **Bayes' rule:**  
 
 $$ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(A) P(B|A)}{P(B)}  $$ 
+
+**Resources:** 
+
+- [https://projects.iq.harvard.edu/stat110](https://projects.iq.harvard.edu/stat110){:target="_blank"} 

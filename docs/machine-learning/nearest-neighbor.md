@@ -18,8 +18,108 @@ In the MNIST dataset there are 60,000 images of handwritten digits with correct 
 
 In the nearest neighbor classification, we decide the correct digit for a given image, by comparing the distance of given image with 60,000 training dataset, and choosing the closest image with its label. 
 
-#### K-Nearest Neighbors (KNN)
+```py 
+import io, gzip 
+from urllib.request import urlopen
+import numpy as np
+import matplotlib.pyplot as plt 
 
-K represents the number of nearest neighbors. If K=1, it becomes nearest neighbor algorithm. The distance in KNN could be chosen among Euclidean, Hamming, Manhattan, Minkowski etc. 
+%matplotlib inline
+```
 
-KNN performs better with a low number of features. We need to perform principal component analysis or feature selection before applying KNN. Increase in dimension requires exponential increase in data points. 
+```py
+# load images
+def mnist_images(url):  
+    with gzip.open(io.BytesIO(urlopen(url).read()), 'rb') as f:
+        data = np.frombuffer(f.read(), np.uint8, offset=16)
+        # consult <http://yann.lecun.com/exdb/mnist/> for details 
+    data = data.reshape(-1,784)
+    return data/256  # we are using int8, squared distance could be large
+
+# load image labels
+def mnist_labels(url):        
+    with gzip.open(io.BytesIO(urlopen(url).read()), 'rb') as f:
+        data = np.frombuffer(f.read(), np.uint8, offset=8)
+    return data
+
+# plot/view a specific image
+def mnist_view(im):
+    plt.axis('off')
+    plt.imshow(im.reshape((28,28)), cmap=plt.cm.gray, origin='upper')
+    plt.show()
+    return
+
+# calculate squared distance
+def dist(x1, x2):
+    return np.sum(np.square(x1-x2))
+
+# find nearest neighbor 
+def find_nn(x):
+    dist_vec = [dist(x, train_data[i,]) for i in range(len(train_labels))]
+    print("Index: ", np.argmin(dist_vec))
+    return train_labels[np.argmin(dist_vec)]
+```
+
+```py
+train_data = mnist_images('https://pranabdas.github.io/drive/datasets/mnist-handwritten-digits/train-images-idx3-ubyte.gz')
+test_data = mnist_images('https://pranabdas.github.io/drive/datasets/mnist-handwritten-digits/t10k-images-idx3-ubyte.gz')
+train_labels = mnist_labels('https://pranabdas.github.io/drive/datasets/mnist-handwritten-digits/train-labels-idx1-ubyte.gz')
+test_labels = mnist_labels('https://pranabdas.github.io/drive/datasets/mnist-handwritten-digits/t10k-labels-idx1-ubyte.gz')
+```
+
+```py
+# view a sample data
+mnist_view(train_data[50,:]);
+```
+![nn-01](../img/nn-01.png) 
+
+```py
+# print the corresponding label 
+print("Label:", train_labels[50])
+```
+Label: 3
+
+```py
+find_nn(test_data[100, :])
+```
+Index:  57158  
+6
+
+```py
+mnist_view(test_data[100, :])
+```
+![nn-02](../img/nn-02.png) 
+
+```py
+mnist_view(train_data[57158, ])
+```
+![nn-03](../img/nn-03.png) 
+
+The nearest neighbor algorithm can be imported from the `scikit-learn` `KDTree` and `BallTree` algorithm, where the search is faster than our above algorithm: 
+```py 
+from sklearn.neighbors import BallTree, KDTree
+
+ball_tree = BallTree(train_data)
+kd_tree = KDTree(train_data)
+```
+```py
+train_labels[ball_tree.query(test_data[100, :].reshape(1, -1), \
+                             k=1, return_distance=False)[0][0]]
+```
+6
+```py
+train_labels[kd_tree.query(test_data[100, :].reshape(1, -1), k=1, \
+                           return_distance=False)[0][0]]
+```
+6 
+
+```py 
+# Let's calculate the precision of nearest neighbor algorithm
+result = [train_labels[ball_tree.query(test_data[i, :].reshape(1, -1), k=1, \
+         return_distance=False)[0][0]] for i in range(len(test_labels))]
+
+correct_result = np.equal(result, test_labels)
+success = float(np.sum(correct_result))/len(test_labels)
+print('Success =', success*100, '%')
+```
+Success = 96.91 %
