@@ -1,0 +1,901 @@
+---
+title: Numerical operations using numpy
+sidebar_label: Numerical operations
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Creating `numpy` array:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+import numpy as np
+my_array = np.array([1, 3, 4])
+print(my_array)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[1 3 4]
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+type(my_array)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+numpy.ndarray
+```
+
+</TabItem>
+</Tabs>
+
+Create a two-dimensional array/matrix:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array2 = np.array([[1, 2, 4], [3, 1, 5]])
+print(my_array2)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[[1 2 4]
+ [3 1 5]]
+```
+
+</TabItem>
+</Tabs>
+
+Check dimension of an array:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array2.ndim
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+2
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array2.shape
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+(2, 3)
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array2.size
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+6
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array2.dtype
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+dtype('int64')
+```
+
+</TabItem>
+</Tabs>
+
+We can specify the dtype explicitly if you need to.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array3 = np.array([[1, 4, 7], [1, 9, 32]], dtype=np.float64)
+my_array3.dtype
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+dtype('float64')
+```
+
+</TabItem>
+</Tabs>
+
+We can switch type of an existing array:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array3.astype(np.int64)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[ 1,  4,  7],
+       [ 1,  9, 32]])
+```
+
+</TabItem>
+</Tabs>
+
+Alternative way:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array3 = np.array(my_array3, dtype=np.float64)
+print(my_array3)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[[ 1.  4.  7.]
+ [ 1.  9. 32.]]
+```
+
+</TabItem>
+</Tabs>
+
+Creating zero matrices:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_zero_array = np.zeros((2, 3))
+print(my_zero_array)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[[0. 0. 0.]
+ [0. 0. 0.]]
+```
+
+</TabItem>
+</Tabs>
+
+Matrix of ones:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_ones_array = np.ones((2, 3))
+print(my_ones_array)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[[1. 1. 1.]
+ [1. 1. 1.]]
+```
+
+</TabItem>
+</Tabs>
+
+If we need to fill the matrix with some other constant, we can first create
+ones_matrix and multiply. However there is another function to do the same.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_const_array = np.full([2, 3], 5)
+print(my_const_array)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[[5 5 5]
+ [5 5 5]]
+```
+
+</TabItem>
+</Tabs>
+
+Create arrays with incremental sequences:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array4 = np.arange(1, 10, 2)
+print(my_array4)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[1 3 5 7 9]
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array5 = np.linspace(1, 10, 10)
+print(my_array5)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[ 1.  2.  3.  4.  5.  6.  7.  8.  9. 10.]
+```
+
+</TabItem>
+</Tabs>
+
+Create meshgrid:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+x = np.array([-1, 0, 1])
+y = np.array([-2, 0, 2])
+
+X, Y = np.meshgrid(x, y)
+print(X, '\n\n', Y)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[[-1  0  1]
+ [-1  0  1]
+ [-1  0  1]]
+
+ [[-2 -2 -2]
+ [ 0  0  0]
+ [ 2  2  2]]
+```
+
+</TabItem>
+</Tabs>
+
+Other useful matrices:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.identity(4)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.eye(4)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.eye(4, k=1)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[0., 1., 0., 0.],
+       [0., 0., 1., 0.],
+       [0., 0., 0., 1.],
+       [0., 0., 0., 0.]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.eye(4, k=-1)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[0., 0., 0., 0.],
+       [1., 0., 0., 0.],
+       [0., 1., 0., 0.],
+       [0., 0., 1., 0.]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.diag(np.arange(0, 20, 5))
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[ 0,  0,  0,  0],
+       [ 0,  5,  0,  0],
+       [ 0,  0, 10,  0],
+       [ 0,  0,  0, 15]])
+```
+
+</TabItem>
+</Tabs>
+
+Create random matrix:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.random.rand(3)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([0.49067738, 0.79451961, 0.87339187])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.random.rand(2, 3)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[0.858099  , 0.86235168, 0.48305685],
+       [0.23118357, 0.87312982, 0.1940535 ]])
+```
+
+</TabItem>
+</Tabs>
+
+Normally distributed random numbers:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array_10 = np.random.randn(5); my_array_10
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([ 0.55956033, -0.37623696,  1.78995147,  0.05591339, -0.43796257])
+```
+
+</TabItem>
+</Tabs>
+
+Expand matrix with `numpy.tile()`:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array_11 = np.array([[1, 3], [2, 5]]); my_array_11
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[1, 3],
+       [2, 5]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array_12 = np.tile(my_array_11, 2); my_array_12
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[1, 3, 1, 3],
+       [2, 5, 2, 5]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array_12 = np.tile(my_array_11, (3, 2)); my_array_12
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[1, 3, 1, 3],
+       [2, 5, 2, 5],
+       [1, 3, 1, 3],
+       [2, 5, 2, 5],
+       [1, 3, 1, 3],
+       [2, 5, 2, 5]])
+```
+
+</TabItem>
+</Tabs>
+
+Indexing and slicing matrix:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array = np.arange(5); my_array
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([0, 1, 2, 3, 4])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+print(my_array[0], my_array[-1])
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+0 4
+```
+
+</TabItem>
+</Tabs>
+
+Reversing an array:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array[::-1]
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([4, 3, 2, 1, 0])
+```
+
+</TabItem>
+</Tabs>
+
+Indexing in higher dimensional array:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array = np.array([[1, 3, 2], [1, 4, 2], [5, 3, 1]]); print(my_array)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[[1 3 2]
+ [1 4 2]
+ [5 3 1]]
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array[2, 1]
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+3
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_array[2, :]
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([5, 3, 1])
+```
+
+</TabItem>
+</Tabs>

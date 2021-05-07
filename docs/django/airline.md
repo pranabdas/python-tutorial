@@ -1,20 +1,23 @@
-### Flights app
-Here we will learn about databases. 
+---
+title: Airline app
+---
+Here we will learn about databases.
 
 Create our airline app:
-```py
+```python
 django-admin startapp flights
 ```
 
-Include our new app to the `myWebApp/settings.py` INSTALLED_APPS. 
+Include our new app to the `myWebApp/settings.py` `INSTALLED_APPS`.
 
-Include the flights urls in `myWebApp/urls.py`. 
+Include the flights urls in `myWebApp/urls.py`.
 
-Create `flights/urls.py`. 
+Create `flights/urls.py`.
 
-##### Models 
-Open `flights/models.py`. Here we will define our models. Each model can access a database table. 
-```py 
+### Models
+Open `flights/models.py`. Here we will define our models. Each model can access
+a database table.
+```python
 from django.db import models
 
 # Create your models here.
@@ -26,28 +29,28 @@ class Flights(models.Model):
 
     def __str__(self):
         return f"{self.id}: {self.origin} to {self.destination}"
-    
+
 class Airports(models.Model):
     code = models.CharField(max_length=3)
     city = models.CharField(max_lenght=64)
-    
+
     def __str__(self):
         return f"{self.city} ({self.code})"
 ```
 
 Now we need to migrate to database:
-```py
+```bash
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
-##### Django shell
-```py
+### Django shell
+```bash
 python3 manage.py shell
 ```
 
 Now we can play around in the django shell:
-```py
+```python
 from flights.models import Flights
 f = Flight(origin="Singapore", destination="San Francisco", duration=960)
 f.save()

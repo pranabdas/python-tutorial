@@ -1,0 +1,13 @@
+jupyterlab
+numpy
+scipy
+matplotlib
+pandas
+xlrd
+openpyxl
+seaborn
+bokeh
+geopandas
+scikit-learn
+tensorflow
+missingno

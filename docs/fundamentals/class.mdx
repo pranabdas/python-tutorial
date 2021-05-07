@@ -1,0 +1,118 @@
+---
+title: Class
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Define a class:
+```python
+class Customer():
+    """A customer of ABC Bank with a checking account. Customers have the
+    following properties:
+
+    Attributes:
+        name: A string representing the customer's name.
+        balance: A float tracking the current balance of the customer's account.
+    """
+
+    def __init__(self, name, balance=0.0):
+        """Return a Customer object whose name is *name* and starting
+        balance is *balance*."""
+        self.name = name
+        self.balance = balance
+
+    def withdraw(self, amount):
+        """Return the balance remaining after withdrawing *amount*
+        dollars."""
+        if amount > self.balance:
+            raise RuntimeError('Amount greater than available balance.')
+        self.balance -= amount
+        return self.balance
+
+    def deposit(self, amount):
+        """Return the balance remaining after depositing *amount*
+        dollars."""
+        self.balance += amount
+        return self.balance
+```
+
+Create/instantiate a class object:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+cust1 = Customer('Pranab', 1000)
+cust1.deposit(500)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+1500
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+cust1.name
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+'Pranab'
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+cust1.balance
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+1500
+```
+
+</TabItem>
+</Tabs>
+
+:::tip
+Do not introduce new attributes outside the `__init__`
+:::

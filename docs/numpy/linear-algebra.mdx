@@ -1,0 +1,432 @@
+---
+title: Basic Linear Algebra using numpy
+sidebar_label: Linear Algebra
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### Dot product
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+import numpy as np
+x = np.array([3, 4, 1])
+y = np.array([2, -3, 4])
+np.dot(x, y)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+-2
+```
+
+</TabItem>
+</Tabs>
+
+Angle between two vectors:
+
+$$\cos(\theta) = \frac{\bf{x} \cdot \bf{y}}{|\bf{x}| |\bf{y}|}$$
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.dot(x, y)/(np.linalg.norm(x) * np.linalg.norm(y))
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+-0.07283570407292297
+```
+
+</TabItem>
+</Tabs>
+
+### Matrix multiplication
+
+The inner dimensions of matrices must match for multiplication. The dimension or
+output matrix is the outer dimensions, e.g., a $2 \times 3$ multiplied with a
+$3 \times 3$ matrix will result in a $2 \times 3$ matrix.
+
+Matrix multiplication is not commutative (in general): $AB \neq BA$
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+A = np.array([[1, -2, 1], [2, -4, 5]]); A
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[ 1, -2,  1],
+       [ 2, -4,  5]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+B = np.array([[3, 4, 2], [1, -2, 0], [2, 1, -3]]); B
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[ 3,  4,  2],
+       [ 1, -2,  0],
+       [ 2,  1, -3]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.matmul(A, B)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[  3,   9,  -1],
+       [ 12,  21, -11]])
+```
+
+</TabItem>
+</Tabs>
+
+### Transpose
+
+$$(AB)^T = B^T A^T$$
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+AT = A.transpose(); AT
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[ 1,  2],
+       [-2, -4],
+       [ 1,  5]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+(np.matmul(A, B)).transpose()
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[  3,  12],
+       [  9,  21],
+       [ -1, -11]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.matmul(B.transpose(), A.transpose())
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[  3,  12],
+       [  9,  21],
+       [ -1, -11]])
+```
+
+</TabItem>
+</Tabs>
+
+If $u$, $v~\epsilon~\rm{R}^d$; $\bf{u} \cdot \bf{v} = u^Tv$
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+u = np.array([3, 4, 1]); u
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([3, 4, 1])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+v = np.array([1, 5, 3]); v
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([1, 5, 3])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.matmul(u.transpose(), v)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+26
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.dot(u, v)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+26
+```
+
+</TabItem>
+</Tabs>
+
+$M$ is symmetric if $M = M^T$
+Diagonal matrices are symmetric.
+
+### Determinant
+
+For a $2 \times 2$ matrix $A = \begin{pmatrix}a & b\\ c & d \end{pmatrix}$, $det
+(A) = ad -bc$
+
+For a diagonal matrix, $det(A)$ is the product of diagonal elements.
+
+$$det(AB) = det(A) det(B)$$
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+A = np.array([[1, 2, 4], [-2, 0, 3], [5, -1, -2]]); A
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[ 1,  2,  4],
+       [-2,  0,  3],
+       [ 5, -1, -2]])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.linalg.det(A)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+33.000000000000014
+```
+
+</TabItem>
+</Tabs>
+
+### Inverse
+
+$B$ is inverse of $A$ ($A$ must be a square matrix) if $AB = BA = I$
+
+$$B = A^{-1}$$
+
+A matrix for which inverse does not exist is called singular matrix.
+$A$ is invertible if and only if $|A| \neq 0$.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.linalg.inv(A)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[ 9.09090909e-02, -2.22044605e-17,  1.81818182e-01],
+       [ 3.33333333e-01, -6.66666667e-01, -3.33333333e-01],
+       [ 6.06060606e-02,  3.33333333e-01,  1.21212121e-01]])
+```
+
+</TabItem>
+</Tabs>

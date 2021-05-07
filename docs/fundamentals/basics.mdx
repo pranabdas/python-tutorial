@@ -1,0 +1,383 @@
+---
+title: Python Basics
+sidebar_label: Get started
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### Hello Python
+It is customary to write our first program that prints some message in the
+screen:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+print("Hello Python!")
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+Hello Python!
+```
+
+</TabItem>
+</Tabs>
+
+### Assigning variables
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+a = 5
+b = 3
+a + b
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+8
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+a * b
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+15
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+a - b
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+2
+```
+
+</TabItem>
+</Tabs>
+
+### String concatenation
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+greeting = "Hello"
+name = "Pranab"
+print(greeting + " " + name)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+Hello Pranab
+```
+
+</TabItem>
+</Tabs>
+
+### Loosely typed
+As we have seen, we do not need to define the datatype in python. Interestingly,
+for certain operations, we can even mix types:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_str = "Rain! "
+my_str * 3  # multiplying a str with int
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+'Rain! Rain! Rain! '
+```
+
+</TabItem>
+</Tabs>
+
+### Input
+Collecting user input:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+age = input("How old are you? ")
+type(age)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+How old are you? 34
+<class 'str'>
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+Notice that variable assigned from `input` is a string, even if a number is
+entered.
+:::
+
+### Type conversion
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+age = int(age)
+type(age)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+<class 'int'>
+```
+
+</TabItem>
+</Tabs>
+
+### String formatting
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+"Singapore".upper()
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+'SINGAPORE'
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+"Singapore".lower()
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+'singapore'
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+"das".capitalize()
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+'Das'
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+"pranab das".title()
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+'Pranab Das'
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+"ABCDefgh".swapcase()
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+'abcdEFGH'
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+name = 'Pranab'
+age = 34
+print("Name: {0}. Age: {1} years.".format(name, age))
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+Name: Pranab. Age: 34 years.
+```
+
+</TabItem>
+</Tabs>

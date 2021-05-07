@@ -1,0 +1,44 @@
+---
+title: Integration
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Let's say, we want to perform the following integration:
+
+$$I = \int_{0}^{\pi} sin(x) dx$$
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+from scipy.integrate import quad
+import numpy as np
+
+# Define the function
+def integrand(x):
+    return np.sin(x)
+
+I = quad(integrand, 0, np.pi)
+print(I)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+(2.0, 2.220446049250313e-14)
+```
+
+</TabItem>
+</Tabs>
+
+It returns the result and error bound.

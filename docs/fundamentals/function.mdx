@@ -1,0 +1,126 @@
+---
+title: Function
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Defining a function:
+```python
+def greeting():
+    name = "Pranab Das"
+    print("Good morning " + name)
+```
+
+Later calling the function to print the greeting:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+greeting()
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+Good morning Pranab Das
+```
+
+</TabItem>
+</Tabs>
+
+Function with argument:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+def greeting_new(name):
+    print("Good morning", name)
+
+greeting_new("Pranab")
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+Good morning Pranab
+```
+
+</TabItem>
+</Tabs>
+
+Some mathematical operations:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+def add_two_numbers(input_1, input_2):
+    result = input_1 + input_2
+    return result
+
+add_two_numbers(23, 43)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+66
+```
+
+</TabItem>
+</Tabs>
+
+Get arbitrary number of input in a function:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+def get_biggest_number(*args):
+    return max(args)
+
+get_biggest_number(2, 4, 1, 8)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+8
+```
+
+</TabItem>
+</Tabs>

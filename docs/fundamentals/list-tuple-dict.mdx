@@ -1,0 +1,902 @@
+---
+title: List, tuple, and dictionary
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### List
+It is a good idea to name lists as plural as they contain multiple elements. Like, `names`, `items` etc.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names = ['Rupal', 'Pranab', 'Bhanu']
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Rupal', 'Pranab', 'Bhanu']
+```
+
+</TabItem>
+</Tabs>
+
+Lists are mutable, we can change its contents:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names[2] = 'Nihit'
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Rupal', 'Pranab', 'Nihit']
+```
+
+</TabItem>
+</Tabs>
+
+Adding new items to the list
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names.append('Bhanu')
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Rupal', 'Pranab', 'Nihit', 'Bhanu']
+```
+
+</TabItem>
+</Tabs>
+
+Inserting item in a specific place.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names.insert(2, 'Nitin')
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Rupal', 'Pranab', 'Nitin', 'Nihit', 'Bhanu']
+```
+
+</TabItem>
+</Tabs>
+
+Deleting items from list.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+del names[1]
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Rupal', 'Nitin', 'Nihit', 'Bhanu']
+```
+
+</TabItem>
+</Tabs>
+
+`pop` method of removing. `pop` let you use the removed item.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+removed_name = names.pop()  # catch the removed item
+print(names)
+print(removed_name)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Rupal', 'Nitin', 'Nihit']
+Bhanu
+```
+
+</TabItem>
+</Tabs>
+
+`pop` can remove actually any item.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names.pop(1)
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+'Nitin'
+['Rupal', 'Nihit']
+```
+
+</TabItem>
+</Tabs>
+
+
+Remove an item by its value.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names.remove('Rupal')
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Nihit']
+```
+
+</TabItem>
+</Tabs>
+
+:::note
+If there are more than one item with same value, the `.remove` method removes
+only the first occurrence.
+:::
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names.append('Rupal')
+names.append('Nitin')
+names.append('Nihit')
+names.append('Bhanu')
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Nihit', 'Rupal', 'Nitin', 'Nihit', 'Bhanu']
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names.remove('Nihit')
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Rupal', 'Nitin', 'Nihit', 'Bhanu']
+```
+
+</TabItem>
+</Tabs>
+
+Sort lists using `sorted` function (it does not change the original list).
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+print(sorted(names))
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Bhanu', 'Nihit', 'Nitin', 'Rupal']
+```
+
+</TabItem>
+</Tabs>
+
+Sort lists permanently by using `sort` method.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names.sort()
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Bhanu', 'Nihit', 'Nitin', 'Rupal']
+```
+
+</TabItem>
+</Tabs>
+
+Reverse list times using `.reverse` method
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names.reverse()
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Rupal', 'Nitin', 'Nihit', 'Bhanu']
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+names[2] = 'nihit'
+names.sort()
+print(names)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+['Bhanu', 'Nitin', 'Rupal', 'nihit']
+```
+
+</TabItem>
+</Tabs>
+
+:::danger
+Beware of mixinig uppercase and lowercase letters. The methods may not work as
+you except.
+:::
+
+Looping through items of a list:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+for name in names:
+    print(name)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+Nitin
+Rupal
+nihit
+```
+
+</TabItem>
+</Tabs>
+
+Use `range` function to create numerical lists.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+nums = list(range(1, 11))
+print(nums)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+squares = []
+for num in nums:
+   squares.append(num**2)
+
+for ii in range(len(nums)):
+   print(nums[ii], '\t', squares[ii])
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+nums	 squares
+1 	 1
+2 	 4
+3 	 9
+4 	 16
+5 	 25
+6 	 36
+7 	 49
+8 	 64
+9 	 81
+10 	 100
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+even_numbers = list(range(2, 11, 2))
+print(even_numbers)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[2, 4, 6, 8, 10]
+```
+
+</TabItem>
+</Tabs>
+
+List comprehensions:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+squares = [value**2 for value in range(1, 11)]
+print(squares)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+```
+
+</TabItem>
+</Tabs>
+
+### Tuples
+Tuples are just like *lists* except that they are immutable. However, we can
+update the whole tuple instead of individual entries. Here we use parenthesis
+instead of square bracket to define tuples.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+tup = (1, 2, 3)
+tup[0]
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+1
+```
+
+</TabItem>
+</Tabs>
+
+Reassigning values would result in errors
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+tup[1] = 4 # would result in error
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+TypeError: 'tuple' object does not support item assignment
+```
+
+</TabItem>
+</Tabs>
+
+
+But we can reassign the whole tuple:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+tup = (2, 3, 4, 5)
+print(tup)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+(2, 3, 4, 5)
+```
+
+</TabItem>
+</Tabs>
+
+### Dictionary
+Python dictionary are list of key value pairs.
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_dict = {'Pranab' : 185, 'Sasha' : 196};
+print(my_dict)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+{'Pranab': 185, 'Sasha': 196}
+```
+
+</TabItem>
+</Tabs>
+
+You can get values by using it's key:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_dict['Pranab']
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+185
+```
+
+</TabItem>
+</Tabs>
+
+Adding new items to the dictionary:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_dict['Luis'] = 190;
+print(my_dict)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+{'Pranab': 185, 'Sasha': 196, 'Luis': 190}
+```
+
+</TabItem>
+</Tabs>
+
+Reassign values:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_dict['Luis'] = 191;
+print(my_dict)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+{'Pranab': 185, 'Sasha': 196, 'Luis': 191}
+```
+
+</TabItem>
+</Tabs>
+
+Delete an entry:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+del my_dict['Luis'];
+print(my_dict)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+{'Pranab': 185, 'Sasha': 196}
+```
+
+</TabItem>
+</Tabs>
+
+Looping through keys and values in a dictionary:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+print('Name\t Height');
+for key, value in my_dict.items():
+   print(key, '\t', value);
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+Name	 Height
+Pranab 	 185
+Sasha 	 196
+```
+
+</TabItem>
+</Tabs>
+
+Looping through keys:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+for key in my_dict.keys():
+    print(key, my_dict[key])
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+Pranab 185
+Sasha 196
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+if 'Pranab' in my_dict.keys():
+   print('Hello Pranab, your height is :', my_dict['Pranab'])
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+Hello Pranab, your height is : 185
+```
+
+</TabItem>
+</Tabs>
+
+Similarly we can loop through values also:
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+my_dict.values()
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+dict_values([185, 196])
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+for value in my_dict.values():
+    print(value)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+185
+196
+```
+</TabItem>
+</Tabs>

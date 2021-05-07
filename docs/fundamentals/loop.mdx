@@ -1,0 +1,116 @@
+---
+title: Loop
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### for loop
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+for i in range(10):
+    print(i)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+
+</TabItem>
+</Tabs>
+
+### while loop
+```python
+prompt = "\nTell me something, and I will repeat it back to you:"
+prompt += "\nEnter 'quit' to end the program. "
+
+message = ""
+while message != 'quit':
+    message = input(prompt)
+    print(message)
+```
+
+- Use a `flag` to do the same:
+```python
+prompt = "\nTell me something, and I will repeat it back to you:"
+prompt += "\nEnter 'quit' to end the program. "
+
+active = True
+while active:
+    message = input(prompt)
+
+    if message == 'quit':
+        active = False
+    else:
+        print(message)
+```
+
+### break
+```python
+prompt = "\nTell me something, and I will repeat it back to you:"
+prompt += "\nEnter 'quit' to end the program. "
+
+while True:
+    message = input(prompt)
+
+    if message == 'quit':
+        break
+    else:
+        print(message)
+```
+
+### continue
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+current_num = 0
+while current_num < 10:
+    current_num += 1
+    if current_num % 2 == 0:
+        continue
+    print(current_num)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+1
+3
+5
+7
+9
+```
+
+</TabItem>
+</Tabs>
