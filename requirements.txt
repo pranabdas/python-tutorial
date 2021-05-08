@@ -11,3 +11,4 @@ geopandas
 scikit-learn
 tensorflow
 missingno
+ipywidgets

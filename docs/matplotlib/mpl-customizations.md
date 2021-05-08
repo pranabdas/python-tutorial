@@ -1,6 +1,6 @@
 ---
 title: Customizing matplotlib plots
-sidebar_label: Matplotlib customization
+sidebar_label: Customizing matplotlib
 ---
 
 You can customize every aspect of Matplotlib according to your needs and likes.
@@ -13,7 +13,7 @@ upgrade matplotlib. To avoid overwriting, copy the file to
 `~/.matplotlib/matplotlibrc` and edit under your home directory. The
 `matplotlibrc` file locations maybe different depending on the operating system.
 You can get a copy of sample `matplotlibrc` file [here](
-https://matplotlib.org/tutorials/introductory/customizing.html#matplotlibrc-sample)
+https://matplotlib.org/tutorials/introductory/customizing.html#matplotlibrc-sample).
 
 Unfortunately, some settings are not correctly applied while using
 `%matplotlib inline` in Jupyter notebook. Settings we need to apply in the
@@ -24,13 +24,16 @@ plt.rcParams["figure.figsize"] = (8, 6)
 plt.rcParams["figure.dpi"] = 150
 ```
 
-### Interactive backend
+### Alternative backend
 If you want interactive plots, like ability to zoom, pan, read cursor position
 etc., you can use notebook backend in your jupyter notebook:
 
 ```python
 %matplotlib notebook
 ```
+
+There are also Qt based backend that can show plot on it's own window and allows
+more interactivity.
 
 ### Overriding default colors
 ```python

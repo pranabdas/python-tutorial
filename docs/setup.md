@@ -47,9 +47,23 @@ We can update outdated python packages by:
 pip install --upgrade <package-name>
 pip install --upgrade jupyterlab
 ```
+:::note
+The `--upgrade` flag can be used even if the package is not already installed,
+it will install the latest version. If a package is installed and a newer
+version is available, it will upgrade to the latest version.
+:::
 
 You can install a list of python packages from a [requirements.txt](
-https://github.com/pranabdas/python-tutorial/blob/master/requirements.txt) file:
+https://github.com/pranabdas/python-tutorial/blob/master/requirements.txt) file.
+List each package name on separate line:
+```python title="requirements.txt"
+jupyterlab
+numpy
+scipy
+matplotlib
+```
+
+Installing a list of packages from `requirements.txt`:
 ```bash
 pip install --upgrade -r requirements.txt
 ```
@@ -142,3 +156,8 @@ Launch Jupyter notebook inside the container:
 ```bash
 jupyter-notebook
 ```
+
+Now we can create a new python 3 notebook, and start writing our python code.
+Proper way to close a notebook is: first save the notebook then choose
+*Close and Halt* from the *File* menu. Once all the notebooks are closed, you
+can quit Jupyter by clicking the *Quit* button on top right of Jupyter homepage.

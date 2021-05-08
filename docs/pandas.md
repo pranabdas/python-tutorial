@@ -9,3 +9,8 @@ check following notebooks on pandas:
 https://github.com/pranabdas/python-tutorial/blob/master/notebooks/pandas-dataframe.ipynb)
 - [Working with CSV and Excel file format](
 https://github.com/pranabdas/python-tutorial/blob/master/notebooks/pandas-csv-excel.ipynb)
+
+:::tip
+If you cannot view the notebooks in the browser, please clone or download the
+repository and open the notebooks in Jupyter.
+:::

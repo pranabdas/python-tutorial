@@ -3,7 +3,7 @@ const math = require("remark-math");
 const katex = require("rehype-katex");
 module.exports = {
   title: "Python Tutorial",
-  tagline: "The tagline of my site",
+  tagline: "Python tutorial and notes.",
   url: "https://pranabdas.github.io",
   baseUrl: "/python-tutorial/", // must have a trailing "/"
   onBrokenLinks: "throw",
