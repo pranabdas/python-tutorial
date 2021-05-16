@@ -430,3 +430,44 @@ array([[ 9.09090909e-02, -2.22044605e-17,  1.81818182e-01],
 
 </TabItem>
 </Tabs>
+
+### System of linear equations
+$$2 x_1 + x_2 + x_3 = 1$$
+
+$$6 x_1 + 2 x_2 + x_3 = -1$$
+
+$$-2 x_1 + 2 x_2 + x_3 = 7$$
+
+$$A\textbf{x} = b$$
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+A = np.array([[2, 1, 1], [6, 2, 1], [-2, 2, 1]])
+b = np.array([1, -1, 7])
+x = np.linalg.solve(A, b)
+print(x)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+[-1.  2.  1.]
+```
+
+</TabItem>
+</Tabs>
+
+### Resources
+- Book: *Introduction to Linear Algebra* by *Gilbert Strang*.
+- Book: *Matrix Analysis and Applied Linear Algebra* by *Carl D. Meyer*.

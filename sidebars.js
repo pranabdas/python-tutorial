@@ -21,7 +21,7 @@ module.exports = {
         },
         {
           type: "category",
-          label: "Plotting",
+          label: "Visualization",
           collapsed: false,
           items: [
             "matplotlib/basic-plotting",

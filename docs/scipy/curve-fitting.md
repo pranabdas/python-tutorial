@@ -20,7 +20,7 @@ plt.show()
 
 ![original-data-plot](../../static/img/scipy-curve-fit-data.png)
 
-```python title="Input"
+```python title="Input:"
 from scipy import optimize
 
 def fit_func(x, a, b):
@@ -30,7 +30,7 @@ params, params_covariance = optimize.curve_fit(fit_func, x, y, p0=[1, 1])
 
 print(params)
 ```
-```python title="Output"
+```python title="Output:"
 [2.77004013 0.48224117]
 ```
 

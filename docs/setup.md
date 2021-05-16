@@ -3,7 +3,7 @@ title: Setup
 slug: /
 ---
 ### Installing Python 3
-If you use macOS (Big Sur, 11), you should have already Python 3 installed. You
+If you use macOS (Big Sur, 11), you should have Python 3 already installed. You
 can check whether Python 3 is installed in your system or not by typing
 following in a terminal:
 ```bash
@@ -20,7 +20,7 @@ sudo apt install python3 python3-pip
 ```
 
 If you use Windows, you can go to <https://www.python.org>, download and
-install latest version of Python 3.
+install the latest version of Python 3.
 
 ### pip
 We can install python packages using the `pip` package manager. To install a
@@ -68,14 +68,14 @@ Installing a list of packages from `requirements.txt`:
 pip install --upgrade -r requirements.txt
 ```
 
-### Installing Jupyter Notebook
+### Installing Jupyterlab
 Jupyter notebook is a convenient way to run and document your python code. We
-can install Jupyter by issuing following command:
+can install Jupyterlab by issuing following command:
 ```bash
 pip install jupyterlab
 ```
 
-Now we can launch Jupyter notebook by typing `jupyter-notebook` in the terminal.
+Now we can launch Jupyterlab by typing `jupyter-lab` in the terminal.
 
 
 ### virtualenv
@@ -128,9 +128,12 @@ RUN apt install -y python3 python3-pip
 # Install pip packages
 RUN pip3 install jupyterlab numpy scipy matplotlib
 
-# bashrc settings
-RUN echo 'alias jupyter-notebook=\
-"jupyter-notebook --allow-root --no-browser --ip 0.0.0.0"' >> $HOME/.bashrc
+# jupyter-lab settings
+RUN mkdir /etc/jupyter && \
+    (echo "c.ServerApp.ip = '0.0.0.0'" && \
+    echo "c.ServerApp.allow_root = True" && \
+    echo "c.ServerApp.open_browser = False") \
+        >> /etc/jupyter/jupyter_server_config.py
 
 # clone code from git repository and remove some packages
 WORKDIR /root
@@ -154,10 +157,7 @@ docker run -ti --net=host -v /host/path:/home jupyter bash
 
 Launch Jupyter notebook inside the container:
 ```bash
-jupyter-notebook
+jupyter-lab
 ```
 
 Now we can create a new python 3 notebook, and start writing our python code.
-Proper way to close a notebook is: first save the notebook then choose
-*Close and Halt* from the *File* menu. Once all the notebooks are closed, you
-can quit Jupyter by clicking the *Quit* button on top right of Jupyter homepage.
