@@ -32,8 +32,10 @@ pip install scipy matplotlib  # install multiple packages
 ```
 
 :::info
+
 Note that in some operating systems, `pip` is referred as `pip3` specifically
 for the version corresponding to Python 3.
+
 :::
 
 
@@ -48,9 +50,11 @@ pip install --upgrade <package-name>
 pip install --upgrade jupyterlab
 ```
 :::note
+
 The `--upgrade` flag can be used even if the package is not already installed,
 it will install the latest version. If a package is installed and a newer
 version is available, it will upgrade to the latest version.
+
 :::
 
 You can install a list of python packages from a [requirements.txt](
@@ -104,8 +108,10 @@ deactivate
 ```
 
 :::tip
+
 Create a `requirements.txt` to list all required python packages for a project,
 and include `venv` path in the `.gitigone`.
+
 :::
 
 ### Docker
@@ -135,10 +141,6 @@ RUN mkdir /etc/jupyter && \
     echo "c.ServerApp.open_browser = False") \
         >> /etc/jupyter/jupyter_server_config.py
 
-# clone code from git repository and remove some packages
-WORKDIR /root
-RUN git clone --depth 1 https://github.com/pranabdas/arpespythontools.git
-
 # leave in `/home` which we can map with the host
 WORKDIR /home
 ```
@@ -161,3 +163,6 @@ jupyter-lab
 ```
 
 Now we can create a new python 3 notebook, and start writing our python code.
+In order to properly close a notebook, save the notebook (either from *File*
+menu or the save icon) → *Close and Shutdown the Notebook* (from *File* menu),
+and finally shutdown the Jupyter server from the *File* menu → *Shut down*.

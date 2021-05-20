@@ -1,6 +1,6 @@
 ---
-title: Basic Linear Algebra using numpy
-sidebar_label: Linear Algebra
+title: Basic linear algebra using numpy
+sidebar_label: Linear algebra
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -36,7 +36,10 @@ np.dot(x, y)
 
 Angle between two vectors:
 
-$$\cos(\theta) = \frac{\bf{x} \cdot \bf{y}}{|\bf{x}| |\bf{y}|}$$
+$$
+\cos(\theta) = \frac{\bf{x} \cdot \bf{y}}{|\bf{x}| |\bf{y}|}
+$$
+
 <Tabs
   defaultValue="input"
   values={[
@@ -150,7 +153,10 @@ array([[  3,   9,  -1],
 
 ### Transpose
 
-$$(AB)^T = B^T A^T$$
+$$
+(AB)^T = B^T A^T
+$$
+
 <Tabs
   defaultValue="input"
   values={[
@@ -343,7 +349,10 @@ For a $2 \times 2$ matrix $A = \begin{pmatrix}a & b\\ c & d \end{pmatrix}$, $det
 
 For a diagonal matrix, $det(A)$ is the product of diagonal elements.
 
-$$det(AB) = det(A) det(B)$$
+$$
+det(AB) = det(A) det(B)
+$$
+
 <Tabs
   defaultValue="input"
   values={[
@@ -400,7 +409,9 @@ np.linalg.det(A)
 
 $B$ is inverse of $A$ ($A$ must be a square matrix) if $AB = BA = I$
 
-$$B = A^{-1}$$
+$$
+B = A^{-1}
+$$
 
 A matrix for which inverse does not exist is called singular matrix.
 $A$ is invertible if and only if $|A| \neq 0$.
@@ -432,13 +443,40 @@ array([[ 9.09090909e-02, -2.22044605e-17,  1.81818182e-01],
 </Tabs>
 
 ### System of linear equations
-$$2 x_1 + x_2 + x_3 = 1$$
+The central problem of linear algebra is solving the system of linear equations.
+There are two main methods to solve linear equations: (1) method of elimination
+and (2) Cramer's rule: method of determinants.
 
-$$6 x_1 + 2 x_2 + x_3 = -1$$
+Let us consider the case of $n$ linear equations with $n$ unknowns. In case of
+elimination, the multiples of first equation is subtracted from the remaining
+equations to eliminate the first unknown. This leaves a smaller system of
+$(n-1)$ equations with $(n-1)$ unknowns. The method is repeated until we are
+left with one equation with one unknown. Then we substitute the solution and
+find the other unknowns in reversed ordered. This method is generally used in
+practice to solve system of linear equation, and known as *Gaussian
+elimination*.
 
-$$-2 x_1 + 2 x_2 + x_3 = 7$$
+$$
+2 x_1 + x_2 + x_3 = 1
+$$
 
-$$A\textbf{x} = b$$
+$$
+6 x_1 + 2 x_2 + x_3 = -1
+$$
+
+$$
+-2 x_1 + 2 x_2 + x_3 = 7
+$$
+
+Matrix equation: $$A\textbf{x} = \textbf{b}$$
+
+Solution: $$\textbf{x} = A^{-1} \textbf{b}$$
+
+$$
+\begin{bmatrix}2 & 1 & 1 \\ 6 & 2 & 1 \\ -2 & 2 & 1 \end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} =
+\begin{bmatrix} 1 \\ -1 \\ 7 \end{bmatrix}
+$$
 
 <Tabs
   defaultValue="input"
@@ -468,6 +506,122 @@ print(x)
 </TabItem>
 </Tabs>
 
+### LU factorization
+After the Gauss elimination, we are left with an upper triangular matrix ($U$).
+
+$$
+U\textbf{x} = \textbf{c}
+$$
+
+The matrix operation that relates $A$ and $U$ ($\textbf{b}$ and $\textbf{c}$)
+is found to be a lower triangular matrix $L$.
+
+$$
+A = LU
+$$
+
+$$
+A\textbf{x} = LU\textbf{x} = L\textbf{c} = \textbf{b}
+$$
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+import scipy.linalg as la
+p, l, u = la.lu(A)
+print("L=", l)
+print("U=", u)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+L= [[ 1.          0.          0.        ]
+ [-0.33333333  1.          0.        ]
+ [ 0.33333333  0.125       1.        ]]
+U= [[6.         2.         1.        ]
+ [0.         2.66666667 1.33333333]
+ [0.         0.         0.5       ]]
+```
+
+</TabItem>
+</Tabs>
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+np.matmul(l, u)
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+array([[ 6.,  2.,  1.],
+       [-2.,  2.,  1.],
+       [ 2.,  1.,  1.]])
+```
+
+</TabItem>
+</Tabs>
+
+Notice that the order of the rows changed and this information is contained in
+the permutaion matrix $P$.
+
+The diagonal elements of $L$ are always 1. There is another form of
+decomposition $A = LDU$, where both $L$ and $U$ has diagonal elements as 1, and
+$D$ is the diagonal matrix of pivots. For a nonsingular matrix $A$, the $LU$ and
+$LDU$ factorization are unique.
+
+Rank of a matrix is the number of pivots or the number of non-zero rows in $U$.
+It represents the number of independent rows in the matrix. Note that the same
+number of columns in $A$ are linearly independent as well.
+
+### Projections
+The projection of a vector $\textbf{b}$ onto $\textbf{a}$ is:
+
+$$
+p = \frac{a^T b}{a^T a} a
+$$
+
+The projection matrix $P = \frac{a a^T}{a^T a}$ so that $p = Pb$.
+
+$P$ is a symmetric matrix, and $P^2 = P$
+
+### Eigenvalues and eigenvectors
+$$
+A \textbf{x} = \lambda \textbf{x}
+$$
+
+where the numbers $\lambda$ are the eigenvalue of $A$. $\textbf{x}$ are the
+special vectors that does not change direction after multiplied by $A$.
+
+- $\det(A - \lambda I) = 0$
+
+- If $A \textbf{x} = \lambda \textbf{x}$ then: $A^2 \textbf{x} = \lambda^2
+\textbf{x}$ and $A^{-1} \textbf{x} = \lambda^{-1} \textbf{x}$
+
+- $\det(A) = (\lambda_1) (\lambda_2) \cdots (\lambda_n)$
+
 ### Resources
-- Book: *Introduction to Linear Algebra* by *Gilbert Strang*.
-- Book: *Matrix Analysis and Applied Linear Algebra* by *Carl D. Meyer*.
+- *Linear Algebra and Its Applications* by *Gilbert Strang*.
+- *Matrix Analysis and Applied Linear Algebra* by *Carl D. Meyer*.

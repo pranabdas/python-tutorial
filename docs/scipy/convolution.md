@@ -62,6 +62,8 @@ plt.show()
 ![convolution-plot](../../static/img/scipy-conv.png)
 
 :::note
+
 Here we have created the functions in the x-range [-2, 2], and plotted in the
 x-range [-0.5, 0.5] in order to avoid the edges during convolution.
+
 :::

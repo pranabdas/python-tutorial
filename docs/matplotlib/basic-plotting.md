@@ -70,12 +70,14 @@ plt.ylim(0, 110)
 plt.show()
 ```
 :::note
+
 Notice that once we update the `rcParams`, the settings persists until we
 restart the kernel. You can go back to matplotlib defaults by:
 `plt.rcParams.update(rcParamsDefault)`
+
 :::
 
-How can I append another plot on the same figure?
+How can we append another plot on the same figure?
 ```python
 y2 = x**3
 plt.plot(x, y, 'ro-', label='y')
@@ -88,5 +90,14 @@ plt.ylim(1, 1200)
 plt.show()
 ```
 ![x vs. y plot](../../static/img/mpl-x-vs-y-3.png)
+
+### Saving plot to file
+```python
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+plt.plot(x, y)
+plt.savefig('fig1.pdf')
+plt.show()
+```
 
 Now visit <https://matplotlib.org> and explore yourself.

@@ -4,7 +4,7 @@ Read the documentation at <https://pranabdas.github.io/python-tutorial>
 
 ### Development of documentation
 ```console
-git clone --depth 1 https://github.com/pranabdas/docusaurus-template
+git clone --depth 1 https://github.com/pranabdas/python-tutorial
 npm install
 ```
 

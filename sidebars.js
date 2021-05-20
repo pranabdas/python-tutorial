@@ -26,6 +26,7 @@ module.exports = {
           items: [
             "matplotlib/basic-plotting",
             "matplotlib/subplot",
+            "matplotlib/two-y-axes",
             "matplotlib/histogram",
             "matplotlib/contour-plot",
             "matplotlib/image-plot",

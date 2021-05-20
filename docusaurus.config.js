@@ -13,9 +13,18 @@ module.exports = {
   projectName: "python-tutorial", // Usually your repo name.
   themeConfig: {
     prism: {
-      theme: require("prism-react-renderer/themes/dracula"),
+      theme: require("prism-react-renderer/themes/github"),
+      darkTheme: require("prism-react-renderer/themes/dracula"),
       additionalLanguages: ["docker"],
     },
+    hideableSidebar: true,
+    // colorMode: {
+    //   defaultMode: "dark",
+    //   switchConfig: {
+    //     // darkIcon: '☾',
+    //     // lightIcon: "☀️"
+    //   },
+    // },
     navbar: {
       title: "Python Tutorial",
       logo: {
@@ -48,7 +57,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: '/',
+          routeBasePath: "/",
           // Please change this to your repo.
           editUrl: "https://github.com/pranabdas/python-tutorial/blob/master/",
           remarkPlugins: [math],

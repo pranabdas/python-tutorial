@@ -1,5 +1,5 @@
 ---
-title: SQL Basics
+title: SQL basics
 ---
 We will use sqlite3 to learn the syntax of SQL before working with servers.
 Install sqlite3 in Ubuntu:
