@@ -1,6 +1,6 @@
 ---
 title: Building webapp using Django framework
-sidebar_label: Webapp
+sidebar_label: Building webapps
 ---
 Django is a python web framework that helps you build rich interactive web apps.
 Mozilla, Dropbox, Instagram, Wikipedia, Spotify are some of the websites built

@@ -8,7 +8,7 @@ module.exports = {
         {
           type: "category",
           label: "Basics",
-          collapsed: false,
+          collapsed: true,
           items: [
             "basics/gs",
             "basics/list-tuple-dict",
@@ -22,7 +22,7 @@ module.exports = {
         {
           type: "category",
           label: "Visualization",
-          collapsed: false,
+          collapsed: true,
           items: [
             "matplotlib/basic-plotting",
             "matplotlib/subplot",
@@ -43,7 +43,7 @@ module.exports = {
         {
           type: "category",
           label: "numpy",
-          collapsed: false,
+          collapsed: true,
           items: [
             "numpy/numpy-basics",
             "numpy/linear-algebra",
@@ -52,7 +52,7 @@ module.exports = {
         {
           type: "category",
           label: "scipy",
-          collapsed: false,
+          collapsed: true,
           items: [
             "scipy/integration",
             "scipy/curve-fitting",
@@ -60,19 +60,12 @@ module.exports = {
           ],
         },
         "pandas",
+        "multiprocessing",
+        "sql-database",
         {
           type: "category",
-          label: "Database",
-          collapsed: false,
-          items: [
-            "database/sql",
-
-          ],
-        },
-        {
-          type: "category",
-          label: "Django",
-          collapsed: false,
+          label: "Django Webapps",
+          collapsed: true,
           items: [
             "django/webapp",
             "django/today-app",
@@ -82,6 +75,7 @@ module.exports = {
           ],
         },
         "misc",
+        "resources",
       ],
     },
   ],

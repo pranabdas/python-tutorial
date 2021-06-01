@@ -1,0 +1,180 @@
+---
+title: Python multiprocessing
+sidebar_label: Multiprocessing
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Most likely the computer you are reading this has multiple processor cores. So
+far the python programs we have written, runs on a single processor. Often part
+of our code can be distributed in parallel to multiple processor and could be
+performed simultaneously. Here we start with an example. First, with usual
+serial processing:
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+import time
+
+def sleep(sec):
+    time.sleep(sec)
+    return sec
+
+t0 = time.perf_counter()
+
+for ii in range(5):
+    print(sleep(ii))
+
+t_final = time.perf_counter()
+print("The program took", t_final - t0, "second(s).")
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+0
+1
+2
+3
+4
+The program took 10.027701000000889 second(s).
+```
+
+</TabItem>
+</Tabs>
+
+With multiprocessing (I am allocating two cores for below examples):
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+import concurrent.futures
+
+t0 = time.perf_counter()
+
+with concurrent.futures.ProcessPoolExecutor() as executor:
+    results = [executor.submit(sleep, ii) for ii in range(5)]
+
+    for f in concurrent.futures.as_completed(results):
+        print(f.result())
+
+t_final = time.perf_counter()
+print("The program took", t_final - t0, "second(s).")
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+0
+1
+2
+3
+4
+The program took 6.067244100000607 second(s).
+```
+
+</TabItem>
+</Tabs>
+
+We can see the performance is almost doubled while using two cores in parallel.
+We could collect the output in a list, or convert to an array as well:
+
+```python
+with concurrent.futures.ProcessPoolExecutor() as executor:
+    results = [executor.submit(sleep, ii) for ii in range(5)]
+
+    result_list = []
+    for f in concurrent.futures.as_completed(results):
+        result_list.append(f.result())
+
+# convert to array
+result_array = np.array(result_list)
+# or
+result_array = np.vstack(result_list)
+```
+
+There is another alternative way of doing the multiprocessing:
+
+<Tabs
+  defaultValue="input"
+  values={[
+    { label: 'Input', value: 'input', },
+    { label: 'Output', value: 'output', },
+  ]
+}>
+
+<TabItem value="input">
+
+```python
+import multiprocessing
+
+def sleep(sec, return_dict):
+    time.sleep(sec)
+    return_dict[sec] = sec
+
+t0 = time.perf_counter()
+
+if __name__ == "__main__":
+    manager = multiprocessing.Manager()
+    return_dict = manager.dict()
+    jobs = []
+    for i in range(5):
+        p = multiprocessing.Process(target=sleep, args=(i, return_dict))
+        jobs.append(p)
+        p.start()
+
+    for proc in jobs:
+        proc.join()
+
+    for key in range(5):
+        print(return_dict[key])
+
+t_final = time.perf_counter()
+print("The program took", t_final - t0, "second(s).")
+```
+
+</TabItem>
+
+<TabItem value="output">
+
+```python
+0
+1
+2
+3
+4
+The program took 4.119128827000168 second(s).
+```
+
+</TabItem>
+</Tabs>
+
+:::info
+
+We must have unique keys, if we want to collect the results in order. In some
+cases, that might not be necessary, e.g., batch processing of images.
+
+:::
+
+## Resources
+- <https://www.youtube.com/watch?v=fKl2JW_qrso>
