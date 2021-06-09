@@ -30,7 +30,7 @@ plt.axis('off')
 plt.show()
 ```
 
-![spherical harmonics](../../static/img/3d-sph-harm.png)
+![spherical harmonics](/img/3d-sph-harm.png)
 
 ```python
 m, l = 2, 3
@@ -53,7 +53,7 @@ plt.axis('off')
 plt.show()
 ```
 
-![spherical harmonics](../../static/img/3d-sph-harm-2.png)
+![spherical harmonics](/img/3d-sph-harm-2.png)
 
 ```python
 m, l = 2, 3
@@ -133,7 +133,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![spherical harmonics](../../static/img/3d-sph-harm-3.png)
+![spherical harmonics](/img/3d-sph-harm-3.png)
 
 ### Wrapping an image onto a sphere
 
@@ -177,7 +177,7 @@ plt.axis('off')
 plt.show()
 ```
 
-![3D earth](../../static/img/3d-earth.png)
+![3D earth](/img/3d-earth.png)
 
 Making series of images with different rotation view:
 ```python

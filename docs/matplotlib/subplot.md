@@ -52,4 +52,4 @@ fig.text(0.51, 0.5, "D", fontsize=16, weight='bold')
 plt.show()
 ```
 
-![subplot](../../static/img/subplot.png)
+![subplot](/img/subplot.png)

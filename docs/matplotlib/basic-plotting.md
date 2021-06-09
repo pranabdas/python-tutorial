@@ -26,7 +26,7 @@ plt.show()
 ```
 
 This produces following output:
-![x vs. y plot](../../static/img/mpl-x-vs-y.png)
+![x vs. y plot](/img/mpl-x-vs-y.png)
 
 Now let's improve the figure a bit. The plt.plot accepts 3 basic arguments in
 the following order: (x, y, format). This format is a short hand combination of
@@ -35,7 +35,7 @@ the following order: (x, y, format). This format is a short hand combination of
 plt.plot(x, y, 'ro-')
 plt.show()
 ```
-![x vs. y plot](../../static/img/mpl-x-vs-y-2.png)
+![x vs. y plot](/img/mpl-x-vs-y-2.png)
 
 More customizations:
 ```python
@@ -89,7 +89,7 @@ plt.xlim(1, 10.5)
 plt.ylim(1, 1200)
 plt.show()
 ```
-![x vs. y plot](../../static/img/mpl-x-vs-y-3.png)
+![x vs. y plot](/img/mpl-x-vs-y-3.png)
 
 ### Saving plot to file
 ```python

@@ -18,7 +18,7 @@ plt.plot(x, y, '.')
 plt.show()
 ```
 
-![original-data-plot](../../static/img/scipy-curve-fit-data.png)
+![original-data-plot](/img/scipy-curve-fit-data.png)
 
 ```python title="Input:"
 from scipy import optimize
@@ -42,4 +42,4 @@ plt.legend(frameon=False, loc="upper center")
 plt.show()
 ```
 
-![curve-fit](../../static/img/scipy-curve-fit.png)
+![curve-fit](/img/scipy-curve-fit.png)

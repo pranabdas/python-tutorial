@@ -23,4 +23,7 @@ output = interactive_plot.children[-1]
 interactive_plot
 ```
 
-![ipywidgets](../../static/img/ipywidgets.png)
+![ipywidgets](/img/ipywidgets.png)
+
+Please try the interactive slider in a jupyter notebook, and see how the figure
+changes.

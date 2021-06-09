@@ -17,4 +17,4 @@ plt.ylabel('freq')
 plt.show()
 ```
 
-![histogram-plot](../../static/img/histogram.png)
+![histogram-plot](/img/histogram.png)

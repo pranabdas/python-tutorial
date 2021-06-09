@@ -14,7 +14,7 @@ module.exports = {
   themeConfig: {
     prism: {
       theme: require("prism-react-renderer/themes/github"),
-      darkTheme: require("prism-react-renderer/themes/dracula"),
+      darkTheme: require("prism-react-renderer/themes/nightOwl"),
       additionalLanguages: ["docker"],
     },
     hideableSidebar: true,
@@ -24,16 +24,81 @@ module.exports = {
     //     // darkIcon: '☾',
     //     // lightIcon: "☀️"
     //   },
+    //   respectPrefersColorScheme: true,
     // },
     navbar: {
       title: "Python Tutorial",
+      hideOnScroll: true,
       logo: {
         alt: "Logo",
         src: "img/favicon.ico",
       },
       items: [
         {
-          href: "https://pranabdas.github.io",
+          to: "/",
+          label: "Docs",
+          position: "left",
+          items: [
+            {
+              label: "Python Tutorial",
+              to: "/",
+            },
+            {
+              label: "~ ~ ~ Other Docs ~ ~ ~",
+              to: "https://pranabdas.github.io/docs/",
+              target: "_self",
+            },
+            {
+              label: "ARPES Python Tools",
+              to: "https://pranabdas.github.io/arpespythontools/",
+              target: "_self",
+            },
+            {
+              label: "Fortran Programming",
+              to: "https://pranabdas.github.io/fortran/",
+              target: "_self",
+            },
+            {
+              label: "Linux Tutorial",
+              to: "https://pranabdas.github.io/linux/",
+              target: "_self",
+            },
+            {
+              label: "Machine Learning Notes",
+              to: "https://pranabdas.github.io/machine-learning/",
+              target: "_self",
+            },
+            {
+              label: "OpenMX tutorial",
+              to: "https://pranabdas.github.io/openmx/",
+              target: "_self",
+            },
+            {
+              label: "Quantum Espresso Tutorial",
+              to: "https://pranabdas.github.io/espresso/",
+              target: "_self",
+            },
+            {
+              label: "SUV Python Tools",
+              to: "https://pranabdas.github.io/suvtools/",
+              target: "_self",
+            },
+            {
+              label: "Condensed Matter Notes",
+              href: "https://pranabdas.github.io/docs/condmat-notes/",
+            },
+            {
+              label: "Javascript Tutorial",
+              href: "https://pranabdas.github.io/docs/js-learning/",
+            },
+            {
+              label: "SUV ARPES Manual",
+              href: "https://pranabdas.github.io/docs/arpes-suv-man/",
+            },
+          ],
+        },
+        {
+          to: "https://pranabdas.github.io",
           label: "About me",
           position: "left",
           target: "_self",
@@ -73,10 +138,9 @@ module.exports = {
   ],
   stylesheets: [
     {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css",
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css",
       type: "text/css",
-      integrity:
-        "sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc",
+      integrity: "sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn", 
       crossorigin: "anonymous",
     },
   ],

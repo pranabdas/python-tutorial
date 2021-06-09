@@ -107,7 +107,7 @@ plt.axis('off')
 plt.show()
 ```
 
-![3d slices](../../static/img/3d-slices.png)
+![3d slices](/img/3d-slices.png)
 
 3D Volume plot:
 
@@ -218,4 +218,4 @@ plt.axis('off')
 plt.show()
 ```
 
-![3d volume plot](../../static/img/3d-vol.png)
+![3d volume plot](/img/3d-vol.png)

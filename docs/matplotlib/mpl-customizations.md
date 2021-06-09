@@ -53,4 +53,4 @@ for i in range(10):
 plt.show()
 ```
 
-![custom-color](../../static/img/custom-color.png)
+![custom-color](/img/custom-color.png)

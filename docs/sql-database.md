@@ -7,8 +7,8 @@ Install sqlite3 in Ubuntu:
 apt install sqlite3
 ```
 
-If you are on macOS, sqlite3 comes preinstalled (checked on Catalina). If you
-don't have it installed in your computer, you can install from Homebrew:
+If you are on macOS, sqlite3 comes preinstalled (checked on Big Sur, 11.4). If
+you don't have it installed in your computer, you can install from Homebrew:
 ```bash
 brew install sqlite3
 ```
