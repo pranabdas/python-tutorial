@@ -48,7 +48,7 @@ plt.xlabel('Kinetic energy (eV)')
 plt.ylabel('Intensity (a.u.)')
 plt.show()
 ```
-![plot-two-col-data](../../static/img/plot-two-col-data.png)
+![plot-two-col-data](/img/plot-two-col-data.png)
 
 ### Writing data to file
 Now that we are able to read data from a file, and use in our program, let us
@@ -64,7 +64,7 @@ plt.xlabel('x')
 plt.ylabel('f(x)')
 plt.show()
 ```
-![func-plot](../../static/img/func-plot.png)
+![func-plot](/img/func-plot.png)
 
 We can save the data as follows:
 ```python

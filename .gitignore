@@ -19,7 +19,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# python related
 /**/.ipynb_checkpoints
 /**/__pycache__
-.DS_Store
-
+/venv

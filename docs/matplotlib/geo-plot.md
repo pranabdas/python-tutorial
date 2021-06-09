@@ -87,4 +87,4 @@ output_notebook()
 show(p)
 ```
 
-![png](../../static/img/geo-plot.png)
+![png](/img/geo-plot.png)

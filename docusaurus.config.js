@@ -14,7 +14,7 @@ module.exports = {
   themeConfig: {
     prism: {
       theme: require("prism-react-renderer/themes/github"),
-      darkTheme: require("prism-react-renderer/themes/dracula"),
+      darkTheme: require("prism-react-renderer/themes/nightOwl"),
       additionalLanguages: ["docker"],
     },
     hideableSidebar: true,

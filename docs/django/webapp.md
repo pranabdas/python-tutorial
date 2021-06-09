@@ -1,10 +1,10 @@
 ---
 title: Building webapp using Django framework
-sidebar_label: Building webapps
+sidebar_label: Django
 ---
 Django is a python web framework that helps you build rich interactive web apps.
-Mozilla, Dropbox, Instagram, Wikipedia, Spotify are some of the websites built
-using Django. First of make sure you have `virtualenv` installed, it helps keep
+Mozilla, Dropbox, Wikipedia, Spotify are some of the websites built using Django
+framework. First of make sure you have `virtualenv` installed, it helps keep
 your project dependencies separate. Create a new project directory, and activate
 `virtualenv`:
 ```bash

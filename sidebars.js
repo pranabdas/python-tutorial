@@ -64,7 +64,7 @@ module.exports = {
         "sql-database",
         {
           type: "category",
-          label: "Django Webapps",
+          label: "Webapps",
           collapsed: true,
           items: [
             "django/webapp",

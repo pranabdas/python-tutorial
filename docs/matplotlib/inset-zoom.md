@@ -21,4 +21,4 @@ axins.set_yticklabels('')
 plt.show()
 ```
 
-![inset zoom](../../static/img/inset-zoom.png)
+![inset zoom](/img/inset-zoom.png)

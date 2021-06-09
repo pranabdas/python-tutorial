@@ -22,4 +22,4 @@ plt.xlim(0, )
 plt.show()
 ```
 
-![function-plot](../../static/img/function-plot.png)
+![function-plot](/img/function-plot.png)

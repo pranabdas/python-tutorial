@@ -42,4 +42,4 @@ plt.imshow(data, aspect='auto', origin="lower", interpolation='none', \
 plt.show()
 ```
 
-![custom colormap](../../static/img/custom-colormap.png)
+![custom colormap](/img/custom-colormap.png)

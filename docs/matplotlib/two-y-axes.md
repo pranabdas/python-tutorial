@@ -35,4 +35,4 @@ fig.tight_layout()  # otherwise the right y-label is slightly clipped
 plt.show()
 ```
 
-![two-y-axes](../../static/img/two-y-axes.png)
+![two-y-axes](/img/two-y-axes.png)

@@ -73,7 +73,7 @@ plt.set_cmap('magma_r')
 plt.show()
 ```
 
-![image-plot](../../static/img/image-plot.png)
+![image-plot](/img/image-plot.png)
 
 With some customizations:
 ```python
@@ -85,7 +85,7 @@ plt.set_cmap('magma_r')
 plt.show()
 ```
 
-![image-plot](../../static/img/image-plot-2.png)
+![image-plot](/img/image-plot-2.png)
 
 ### pcolormesh
 There is also MATLAB style image plot function, which accepts $x$, $y$, and
@@ -95,4 +95,4 @@ plt.pcolormesh(angle, energy, spectra, cmap='jet', shading='auto')
 plt.show()
 ```
 
-![pcolormesh](../../static/img/pcolormesh.png)
+![pcolormesh](/img/pcolormesh.png)
