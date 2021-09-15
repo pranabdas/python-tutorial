@@ -280,7 +280,7 @@ sepal_len        int64
 sepal_width    float64
 petal_len      float64
 petal_width    float64
-class           object
+species         object
 dtype: object
 ```
 

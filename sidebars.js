@@ -11,6 +11,7 @@ module.exports = {
         "basics/flow-control",
         "basics/loop",
         "basics/function",
+        "basics/global-var",
         "basics/class",
         "basics/file-io",
       ],

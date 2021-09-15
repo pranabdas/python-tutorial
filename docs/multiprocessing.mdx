@@ -176,5 +176,33 @@ cases, that might not be necessary, e.g., batch processing of images.
 
 :::
 
+
+## MPI for Python
+
+Installation:
+```bash
+pip install mpi4py
+```
+
+A python code can be run by:
+```bash
+mpirun -np 4 python3 code.py
+```
+
+### MPI Examples
+
+```python
+import sys
+from mpi4py import MPI
+
+comm = MPI.COMM_WORLD
+id = comm.Get_rank()
+p = comm.Get_size()
+
+if (id == 0):
+    print("There are ", p, "MPI processes running.")
+```
+
 ## Resources
 - <https://www.youtube.com/watch?v=fKl2JW_qrso>
+- <https://mpi4py.readthedocs.io/>
