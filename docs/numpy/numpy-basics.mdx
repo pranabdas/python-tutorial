@@ -1,6 +1,6 @@
 ---
 title: Numerical operations using numpy
-sidebar_label: Numerical operations
+sidebar_label: numpy basics
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -899,3 +899,24 @@ array([5, 3, 1])
 
 </TabItem>
 </Tabs>
+
+Masking/substituting array values based on criteria:
+```python
+import numpy as np
+
+a = np.random.rand(10)
+print(a)
+
+# sample output
+[0.80182435 0.94238444 0.42435805 0.03047743 0.20772764 0.63607548
+ 0.17445815 0.32827581 0.5017025  0.33546651]
+
+b = np.array(a)  # make a deep copy
+b[a>0.5] = 1
+b[a<=0.5] = 0
+
+print(b)
+
+# output
+[1. 1. 0. 0. 0. 1. 0. 0. 1. 0.]
+```

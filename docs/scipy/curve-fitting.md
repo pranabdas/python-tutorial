@@ -34,6 +34,9 @@ print(params)
 [2.77004013 0.48224117]
 ```
 
+The order of arguments for `curve_fit`: fitting function, independent variables,
+dependent variable, initialization values for the coefficients (`p0`).
+
 ```python
 # plot both data and fit function
 plt.plot(x, y, 'o', markersize='4', label='Data')

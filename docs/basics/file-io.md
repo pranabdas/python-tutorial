@@ -93,3 +93,7 @@ plt.show()
 data = np.array([x, y]).T
 np.savetxt("../datafiles/data.txt", data)
 ```
+
+For loading a bit more complex data file with headers and comments lines, see
+this example: [Quantum Design SQUID data loader notebook](
+https://github.com/pranabdas/python-tutorial/blob/master/notebooks/Quantum-Design-SQIUD-data-loader.ipynb).

@@ -4,6 +4,8 @@ sidebar_label: Miscellaneous
 ---
 Jupyter notebooks of various python projects:
 
+- [Quantum Design SQUID data loader](
+https://github.com/pranabdas/python-tutorial/blob/master/notebooks/Quantum-Design-SQIUD-data-loader.ipynb)
 - [How to encrypt (and decrypt) a directory?](
 https://github.com/pranabdas/python-tutorial/blob/master/notebooks/encrypt-decrypt-directory.ipynb)
 - [Encryption pandas dataframe](
