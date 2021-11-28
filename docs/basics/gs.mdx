@@ -111,6 +111,21 @@ a - b
 </TabItem>
 </Tabs>
 
+:::tip Good to know
+
+Due to how the numbers are stored in computer memory, floating point algebra
+sometimes might produce unexpected results. Notice the following discrepancy
+(floating point addition/ subtraction is not associative):
+
+```python
+>>> (1.2 + 1E20) - 1E20
+0.0
+>>> 1.2 + (1E20 - 1E20)
+1.2
+```
+
+:::
+
 ### String concatenation
 <Tabs
   defaultValue="input"

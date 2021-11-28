@@ -76,6 +76,27 @@ fid.close()
 ```
 We have stored our data in a file named `data.txt`.
 
+:::info
+
+The read mode is the default while opening files, if you need only read
+permission while opening a file, you can simply omit file mode argument after
+the file name. It is important to close the files when it is not required in
+order to clear system resources. See the `with` statement below, which
+automatically closes the files.
+
+:::
+
+### Using with open
+We can use another method to handle file operations.
+
+```python
+with open('data.txt', 'r') as f:
+    data = f.read()
+```
+
+There is an advantage of using the `with` statement: the file is automatically
+closed when it’s not needed anymore.
+
 ### File I/O using numpy
 `numpy` has a helpful library to read/write formatted data files. We can do
 above tasks following way using `numpy`:
