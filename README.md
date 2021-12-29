@@ -1,6 +1,6 @@
 
 # Python tutorial
-Read the documentation at <https://pranabdas.github.io/python-tutorial>
+Read the documentation at <https://pranabdas.github.io/python-tutorial/>
 
 ### Development of documentation
 ```console

@@ -2,7 +2,37 @@
 title: Miscellaneous projects
 sidebar_label: Miscellaneous
 ---
-Jupyter notebooks of various python projects:
+
+### Running shell commands in python
+
+Single line shell commands example:
+```python
+import subprocess
+
+subprocess.run("echo 'hello'", shell=True, check=True, text=True)
+
+subprocess.run('cd /tmp; pwd', shell=True)
+```
+
+Multiline example:
+```python
+
+cmd = '''cd /tmp;
+pwd;
+'''
+
+subprocess.run(cmd, shell=True, check=True, text=True, \
+    universal_newlines=True, executable='/bin/bash')
+```
+
+:::tip
+
+Conversely, you can also include [python code in shell script](
+https://pranabdas.github.io/linux/shell-scripting#running-python-code-in-bash-script).
+
+:::
+
+### Jupyter notebooks of various python projects
 
 - [Quantum Design SQUID data loader](
 https://github.com/pranabdas/python-tutorial/blob/master/notebooks/Quantum-Design-SQIUD-data-loader.ipynb)
