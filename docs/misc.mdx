@@ -2,21 +2,29 @@
 title: Miscellaneous projects
 sidebar_label: Miscellaneous
 ---
+import CodeBlock from '@theme/CodeBlock';
 
 ### Running shell commands in python
 
-Single line shell commands example:
+Single line shell commands examples:
 ```python
 import subprocess
 
+# example 1
 subprocess.run("echo 'hello'", shell=True, check=True, text=True)
 
+# example 2
 subprocess.run('cd /tmp; pwd', shell=True)
+
+# example 3
+input_text = "Welcome guest"
+message = subprocess.run(["echo", input_text], text=True, \
+    capture_output=True)
+print(message.stdout)
 ```
 
 Multiline example:
 ```python
-
 cmd = '''cd /tmp;
 pwd;
 '''
@@ -24,6 +32,13 @@ pwd;
 subprocess.run(cmd, shell=True, check=True, text=True, \
     universal_newlines=True, executable='/bin/bash')
 ```
+
+A more comprehensive example: Encrypt a folder recursively using `openssl`.
+
+import encrypt_folder_openssl from '!!raw-loader!/src/encrypt_folder_openssl.py'
+
+<CodeBlock className="language-python" title="src/encrypt_folder_openssl.py">{encrypt_folder_openssl}</CodeBlock>
+
 
 :::tip
 
