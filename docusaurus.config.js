@@ -1,8 +1,9 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 const math = require("remark-math");
-const katex = require("rehype-katex");
 /** @type {import('@docusaurus/types').Config} */
-const config = {
+async function config() {
+  const katex = (await import("rehype-katex")).default;
+  return {
   title: "Python Tutorial",
   tagline: "Python tutorial and notes.",
   url: "https://pranabdas.github.io",
@@ -144,13 +145,14 @@ const config = {
 
   stylesheets: [
     {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      href: "https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css",
       type: "text/css",
       integrity:
-        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+        "sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ",
       crossorigin: "anonymous",
     },
   ],
 };
+}
 
 module.exports = config;
