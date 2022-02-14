@@ -5,6 +5,9 @@ module.exports = {
       type: "category",
       label: "Basics",
       collapsed: true,
+      link: {
+        type: "generated-index",
+      },
       items: [
         "basics/gs",
         "basics/list-tuple-dict",
@@ -20,6 +23,9 @@ module.exports = {
       type: "category",
       label: "Visualization",
       collapsed: true,
+      link: {
+        type: "generated-index",
+      },
       items: [
         "matplotlib/basic-plotting",
         "matplotlib/subplot",
@@ -41,6 +47,9 @@ module.exports = {
       type: "category",
       label: "numpy",
       collapsed: true,
+      link: {
+        type: "generated-index",
+      },
       items: [
         "numpy/numpy-basics",
         "numpy/linear-algebra",
@@ -50,6 +59,9 @@ module.exports = {
       type: "category",
       label: "scipy",
       collapsed: true,
+      link: {
+        type: "generated-index",
+      },
       items: [
         "scipy/integration",
         "scipy/curve-fitting",
@@ -63,6 +75,9 @@ module.exports = {
       type: "category",
       label: "Webapps",
       collapsed: true,
+      link: {
+        type: "generated-index",
+      },
       items: [
         "django/webapp",
         "django/today-app",
