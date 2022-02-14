@@ -3,12 +3,19 @@ title: Setup
 slug: /
 ---
 ### Installing Python 3
-If you use macOS (Big Sur, 11), you should have Python 3 already installed. You
-can check whether Python 3 is installed in your system or not by typing
+If you use macOS (Big Sur/11 or Monterey/12), you should have Python 3 already
+installed. However you might need to install Xcode Command Line Tools, you can
+do that by opening Terminal and issuing following command:
+```bash
+xcode-select --install
+```
+
+You can check whether Python 3 is installed in your system or not by typing
 following in a terminal:
 ```bash
 python3 --version
 ```
+
 If python 3 is installed, it will print the version number, otherwise you will
 see some sort of error.
 
@@ -49,6 +56,7 @@ We can update outdated python packages by:
 pip install --upgrade <package-name>
 pip install --upgrade jupyterlab
 ```
+
 :::note
 
 The `--upgrade` flag can be used even if the package is not already installed,
