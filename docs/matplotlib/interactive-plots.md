@@ -2,7 +2,7 @@
 title: Interactive plots using ipywidgets
 sidebar_label: Interactive plots
 ---
-```python
+```python showLineNumbers
 import numpy as np
 import matplotlib.pyplot as plt
 from ipywidgets import interactive

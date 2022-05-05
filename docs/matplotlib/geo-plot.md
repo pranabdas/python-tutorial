@@ -11,7 +11,7 @@ expectancy data over our map from WHO record. You can find such datasets from
 we will be using [here](
 https://pranabdas.github.io/drive/downloads/datasets/Life-Expectancy-Data.csv).
 
-```python
+```python showLineNumbers
 import pandas as pd
 import geopandas as gpd
 import json

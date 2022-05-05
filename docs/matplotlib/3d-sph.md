@@ -3,7 +3,7 @@ title: 3D spherical plots
 ---
 Plotting spherical harmonics in 3D wireframe:
 
-```python
+```python showLineNumbers
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.special import sph_harm
@@ -32,7 +32,7 @@ plt.show()
 
 ![spherical harmonics](/img/3d-sph-harm.png)
 
-```python
+```python showLineNumbers
 m, l = 2, 3
 phi = np.linspace(0, np.pi, 100)
 theta = np.linspace(0, 2*np.pi, 100)
@@ -55,7 +55,7 @@ plt.show()
 
 ![spherical harmonics](/img/3d-sph-harm-2.png)
 
-```python
+```python showLineNumbers
 m, l = 2, 3
 func = sph_harm(m, l, theta, phi).real
 x = np.abs(func) * np.sin(phi) * np.cos(theta)
@@ -137,7 +137,7 @@ plt.show()
 
 ### Wrapping an image onto a sphere
 
-```python
+```python showLineNumbers
 import numpy as np
 import matplotlib.image as image
 import matplotlib.pyplot as plt
@@ -180,7 +180,7 @@ plt.show()
 ![3D earth](/img/3d-earth.png)
 
 Making series of images with different rotation view:
-```python
+```python showLineNumbers
 fig = plt.figure(figsize=(12,12))
 ax = fig.gca(projection='3d')
 ax.dist=20
@@ -204,7 +204,7 @@ for azim in range(0, 360, 5):
 ```
 
 Making a gif from multiple images:
-```python
+```python showLineNumbers
 from PIL import Image
 import glob
 

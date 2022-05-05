@@ -88,12 +88,12 @@ Final step is to create the index.html. We create
 `hello/templates/hello/index.html`
 ```html
 <html>
-        <head>
-                <title>Hello django</title>
-        </head>
-        <body>
-                <h1>Hello Django!</h1>
-        </body>
+  <head>
+    <title>Hello django</title>
+  </head>
+  <body>
+    <h1>Hello Django!</h1>
+  </body>
 </html>
 ```
 
@@ -116,12 +116,12 @@ def greet(request, name):
 Create `hello/templates/hello/greet.html`:
 ```html
 <html>
-        <head>
-                <title>Welcome</title>
-        </head>
-        <body>
-                <h1>Hello {{ name }}!</h1>
-        </body>
+  <head>
+    <title>Welcome</title>
+  </head>
+  <body>
+    <h1>Hello {{ name }}!</h1>
+  </body>
 </html>
 ```
 

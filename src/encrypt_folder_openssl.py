@@ -70,4 +70,3 @@ for root, dirs, files in os.walk(path):
                 universal_newlines=True, executable='/bin/bash')
 
 print("\nDone. Encrypted files are placed under:\n", new_path)
-

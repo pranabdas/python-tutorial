@@ -1,6 +1,7 @@
 ---
 title: Setup
 slug: /
+keywords: ["python", "programming", "tutorial", "jupyter", "matplotlib", "numpy", "pandas", "scipy", "data visualization", "numerical python"]
 ---
 ### Installing Python 3
 If you use macOS (Big Sur/11 or Monterey/12), you should have Python 3 already
@@ -68,7 +69,7 @@ version is available, it will upgrade to the latest version.
 You can install a list of python packages from a [requirements.txt](
 https://github.com/pranabdas/python-tutorial/blob/master/requirements.txt) file.
 List each package name on separate line:
-```python title="requirements.txt"
+```python title="requirements.txt" showLineNumbers
 jupyterlab
 numpy
 scipy
@@ -129,7 +130,7 @@ https://docs.docker.com/get-docker/). Then we can build our container image
 using [Dockerfile](
 https://github.com/pranabdas/python-tutorial/blob/master/Dockerfile), you can
 adjust according to your needs.
-```dockerfile title="Dockerfile"
+```dockerfile title="Dockerfile" showLineNumbers
 # Start from Ubuntu 20.04 LTS
 FROM ubuntu:focal
 

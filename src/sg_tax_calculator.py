@@ -51,4 +51,3 @@ else:
 
 print("Payable tax: SGD", round(tax, 2))
 print("Your take home amount: SGD", round(income-tax, 2))
-

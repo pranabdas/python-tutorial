@@ -21,7 +21,7 @@ serial processing:
 
 <TabItem value="input">
 
-```python
+```python showLineNumbers
 import time
 
 def sleep(sec):
@@ -65,7 +65,7 @@ With multiprocessing (I am allocating two cores for below examples):
 
 <TabItem value="input">
 
-```python
+```python showLineNumbers
 import concurrent.futures
 
 t0 = time.perf_counter()
@@ -99,7 +99,7 @@ The program took 6.067244100000607 second(s).
 We can see the performance is almost doubled while using two cores in parallel.
 We could collect the output in a list, or convert to an array as well:
 
-```python
+```python showLineNumbers
 with concurrent.futures.ProcessPoolExecutor() as executor:
     results = [executor.submit(sleep, ii) for ii in range(5)]
 
@@ -125,7 +125,7 @@ There is another alternative way of doing the multiprocessing:
 
 <TabItem value="input">
 
-```python
+```python showLineNumbers
 import multiprocessing
 
 def sleep(sec, return_dict):
@@ -191,7 +191,7 @@ mpirun -np 4 python3 code.py
 
 ### MPI Examples
 
-```python
+```python showLineNumbers
 import sys
 from mpi4py import MPI
 

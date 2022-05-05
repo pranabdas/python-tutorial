@@ -2,7 +2,7 @@
 title: Image plot
 ---
 Here we will read some two dimensional array data from web url.
-```python
+```python showLineNumbers
 import urllib
 url = "https://pranabdas.github.io/drive/datasets/arpes/sample_spectrum.txt"
 headers = {'User-Agent': 'Mozilla/5.0'}
@@ -11,7 +11,7 @@ data = urllib.request.urlopen(req).read().decode()
 ```
 
 Write a helper function to extract data:
-```python
+```python showLineNumbers
 def load_data(data) :
     import numpy as np
     contents = data.splitlines()
@@ -60,7 +60,7 @@ def load_data(data) :
     return energy, angle, intensity
 ```
 
-```python
+```python showLineNumbers
 import matplotlib.pyplot as plt
 %matplotlib inline
 plt.rcParams["figure.dpi"]=150
@@ -76,7 +76,7 @@ plt.show()
 ![image-plot](/img/image-plot.png)
 
 With some customizations:
-```python
+```python showLineNumbers
 plt.imshow(spectra, origin = 'lower', aspect = 'auto', \
            extent = (angle[0], angle[-1], energy[0], energy[-1]))
 plt.xlabel("$\\theta$ (deg)")

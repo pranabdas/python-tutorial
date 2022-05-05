@@ -6,7 +6,7 @@ Matplotlib includes wonderful colormaps. Moreover, it is possible to create any
 custom colormap we want. We need the RGB values in a file. We could also include
 alpha (transparency) values in 4<sup>th</sup> column.
 
-```python
+```python showLineNumbers
 import matplotlib.pyplot as plt
 %matplotlib inline
 plt.rcParams["figure.dpi"]=150

@@ -4,7 +4,7 @@ sidebar_label: Subplot
 ---
 The following way we can incorporate multiple panels in a figure:
 
-```python
+```python showLineNumbers
 import matplotlib.pyplot as plt
 import numpy as np
 %matplotlib inline

@@ -2,7 +2,7 @@
 title: 3D volume plots
 ---
 Visualizing 3D slices:
-```python
+```python showLineNumbers
 import numpy as np
 import matplotlib.image as image
 import matplotlib.pyplot as plt
@@ -111,7 +111,7 @@ plt.show()
 
 3D Volume plot:
 
-```python
+```python showLineNumbers
 FS, x, y = arp.import_itx('../datafiles/FS.itx')
 GX, x, y = arp.import_itx('../datafiles/GX.itx')
 GY, x, y = arp.import_itx('../datafiles/GY.itx')

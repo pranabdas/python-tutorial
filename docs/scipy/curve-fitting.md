@@ -2,7 +2,7 @@
 title: Curve fitting
 ---
 
-```python
+```python showLineNumbers
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
@@ -20,7 +20,7 @@ plt.show()
 
 ![original-data-plot](/img/scipy-curve-fit-data.png)
 
-```python title="Input:"
+```python title="Input:" showLineNumbers
 from scipy import optimize
 
 def fit_func(x, a, b):
@@ -37,7 +37,7 @@ print(params)
 The order of arguments for `curve_fit`: fitting function, independent variables,
 dependent variable, initialization values for the coefficients (`p0`).
 
-```python
+```python showLineNumbers
 # plot both data and fit function
 plt.plot(x, y, 'o', markersize='4', label='Data')
 plt.plot(x, fit_func(x, params[0], params[1]), c = 'r', label='Fit')

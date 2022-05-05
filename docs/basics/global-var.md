@@ -10,7 +10,7 @@ prints the time interval between calling `tic` and `toc` functions.
 
 First let us write the tic program and set the current time as a global
 variable:
-```python
+```python showLineNumbers
 def tic():
     import time
 
@@ -21,7 +21,7 @@ def tic():
 ```
 
 toc program that prints the elapsed time:
-```python
+```python showLineNumbers
 def toc():
     import time
 

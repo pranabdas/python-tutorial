@@ -9,4 +9,3 @@ t1 = time.time()
 # That's the expensive call:
 result = np.linalg.solve(a, b)
 print(time.time() - t1)
-

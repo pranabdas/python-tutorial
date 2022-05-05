@@ -1,7 +1,7 @@
 ---
 title: Contour plot
 ---
-```python
+```python showLineNumbers
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline

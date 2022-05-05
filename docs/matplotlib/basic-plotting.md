@@ -5,7 +5,7 @@ sidebar_label: Basic plotting
 `matplotlib` is a python graphical package to perform simple and advanced visual
 presentation.
 
-```python
+```python showLineNumbers
 import matplotlib.pyplot as plt
 import numpy as np
 # In Jupyter notebook to show figure inline
@@ -38,7 +38,7 @@ plt.show()
 ![x vs. y plot](/img/mpl-x-vs-y-2.png)
 
 More customizations:
-```python
+```python showLineNumbers
 plt.figure(figsize = (8, 5))
 plt.plot(x, y, 'ro-', linewidth=1, markersize=3)
 plt.title('My simple plot')
@@ -48,7 +48,7 @@ plt.show()
 ```
 
 Even more options:
-```python
+```python showLineNumbers
 large = 22; med = 16; small = 12
 params = {'axes.titlesize': large,
           'legend.fontsize': med,
@@ -78,7 +78,7 @@ restart the kernel. You can go back to matplotlib defaults by:
 :::
 
 How can we append another plot on the same figure?
-```python
+```python showLineNumbers
 y2 = x**3
 plt.plot(x, y, 'ro-', label='y')
 plt.plot(x, y2, 'g*-', label='y2')
@@ -92,7 +92,7 @@ plt.show()
 ![x vs. y plot](/img/mpl-x-vs-y-3.png)
 
 ### Saving plot to file
-```python
+```python showLineNumbers
 x = np.linspace(0, 2*np.pi, 100)
 y = np.sin(x)
 plt.plot(x, y)

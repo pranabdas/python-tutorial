@@ -26,3 +26,10 @@ Deploy to GitHub pages:
 ```console
 npm run gh-deploy
 ```
+
+Swizzle NotFoud:
+```console
+npm run swizzle @docusaurus/theme-classic NotFound
+```
+
+Customize `src/theme/NotFound.js`

@@ -2,7 +2,7 @@
 title: Convolution
 ---
 
-```python
+```python showLineNumbers
 from scipy import signal
 import numpy as np
 import matplotlib.pyplot as plt
@@ -26,7 +26,7 @@ plt.show()
 ```
 ![scipy-fermi-dirac-function](/img/scipy-fermi-dirac-function.png)
 
-```python
+```python showLineNumbers
 # Define normalized Gassian funtion
 def g(x, sigma):
     return (1/(sigma*np.sqrt(2*np.pi)))*np.exp(-x**2/(2*sigma*sigma))
@@ -43,7 +43,7 @@ plt.show()
 
 ![Gaussian-function](/img/scipy-gauss-function.png)
 
-```python
+```python showLineNumbers
 fx = f(E, kT)
 gx = g(x, sigma)
 g0 = g(0, sigma)

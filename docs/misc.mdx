@@ -7,7 +7,7 @@ import CodeBlock from '@theme/CodeBlock';
 ### Running shell commands in python
 
 Single line shell commands examples:
-```python
+```python showLineNumbers
 import subprocess
 
 # example 1
@@ -24,7 +24,7 @@ print(message.stdout)
 ```
 
 Multiline example:
-```python
+```python showLineNumbers
 cmd = '''cd /tmp;
 pwd;
 '''
@@ -37,7 +37,7 @@ A more comprehensive example: Encrypt a folder recursively using `openssl`.
 
 import encrypt_folder_openssl from '!!raw-loader!/src/encrypt_folder_openssl.py'
 
-<CodeBlock language="python" title="src/encrypt_folder_openssl.py">{encrypt_folder_openssl}</CodeBlock>
+<CodeBlock language="python" title="src/encrypt_folder_openssl.py" showLineNumbers>{encrypt_folder_openssl}</CodeBlock>
 
 
 :::tip

@@ -36,7 +36,7 @@ There are also Qt based backend that can show plot on it's own window and allows
 more interactivity.
 
 ### Overriding default colors
-```python
+```python showLineNumbers
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline

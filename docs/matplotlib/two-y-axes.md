@@ -6,7 +6,7 @@ Sometimes we need to plot two dependent variables that have very different
 scaling but they are the function of same independent variable. In such cases,
 we can use two separate y-axes on both sides of the figure.
 
-```python
+```python showLineNumbers
 import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
