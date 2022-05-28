@@ -19,14 +19,20 @@ plt.contour(X, Y, Z)
 plt.show()
 ```
 
-![contour-plot](/img/contour-plot-1.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/contour-plot-1.webp").default} />
+  <img src={require("/img/contour-plot-1.png").default} alt="contour-plot-1" />
+</picture>
 
 ```python
 plt.contour(X, Y, Z, 10, cmap='RdGy')
 plt.show()
 ```
 
-![contour-plot](/img/contour-plot-2.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/contour-plot-2.webp").default} />
+  <img src={require("/img/contour-plot-2.png").default} alt="contour-plot-2" />
+</picture>
 
 ```python
 plt.contourf(X, Y, Z, 20, cmap='RdGy')
@@ -34,4 +40,7 @@ plt.colorbar()
 plt.show()
 ```
 
-![contour-plot](/img/contour-plot-3.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/contour-plot-3.webp").default} />
+  <img src={require("/img/contour-plot-3.png").default} alt="contour-plot-3" />
+</picture>

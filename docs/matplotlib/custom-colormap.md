@@ -42,4 +42,7 @@ plt.imshow(data, aspect='auto', origin="lower", interpolation='none', \
 plt.show()
 ```
 
-![custom colormap](/img/custom-colormap.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/custom-colormap.webp").default} />
+  <img src={require("/img/custom-colormap.png").default} alt="custom-colormap" />
+</picture>

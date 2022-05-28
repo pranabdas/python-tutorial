@@ -23,7 +23,10 @@ output = interactive_plot.children[-1]
 interactive_plot
 ```
 
-![ipywidgets](/img/ipywidgets.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/ipywidgets.webp").default} />
+  <img src={require("/img/ipywidgets.png").default} alt="ipywidgets" />
+</picture>
 
 Please try the interactive slider in a jupyter notebook, and see how the figure
 changes.

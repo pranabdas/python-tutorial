@@ -52,4 +52,7 @@ fig.text(0.51, 0.5, "D", fontsize=16, weight='bold')
 plt.show()
 ```
 
-![subplot](/img/subplot.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/subplot.webp").default} />
+  <img src={require("/img/subplot.png").default} alt="subplot" />
+</picture>

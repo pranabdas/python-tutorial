@@ -30,7 +30,10 @@ plt.axis('off')
 plt.show()
 ```
 
-![spherical harmonics](/img/3d-sph-harm.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/3d-sph-harm.webp").default} />
+  <img src={require("/img/3d-sph-harm.png").default} alt="3d-sph-harm" />
+</picture>
 
 ```python showLineNumbers
 m, l = 2, 3
@@ -53,7 +56,10 @@ plt.axis('off')
 plt.show()
 ```
 
-![spherical harmonics](/img/3d-sph-harm-2.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/3d-sph-harm-2.webp").default} />
+  <img src={require("/img/3d-sph-harm-2.png").default} alt="3d-sph-harm-2" />
+</picture>
 
 ```python showLineNumbers
 m, l = 2, 3
@@ -133,7 +139,10 @@ plt.tight_layout()
 plt.show()
 ```
 
-![spherical harmonics](/img/3d-sph-harm-3.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/3d-sph-harm-3.webp").default} />
+  <img src={require("/img/3d-sph-harm-3.png").default} alt="3d-sph-harm-3" />
+</picture>
 
 ### Wrapping an image onto a sphere
 
@@ -177,7 +186,10 @@ plt.axis('off')
 plt.show()
 ```
 
-![3D earth](/img/3d-earth.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/3d-earth.webp").default} />
+  <img src={require("/img/3d-earth.png").default} alt="3d-earth" />
+</picture>
 
 Making series of images with different rotation view:
 ```python showLineNumbers

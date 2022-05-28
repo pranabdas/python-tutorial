@@ -87,4 +87,7 @@ output_notebook()
 show(p)
 ```
 
-![png](/img/geo-plot.png)
+<picture>
+  <source type="image/webp" srcset={require("/img/geo-plot.webp").default} />
+  <img src={require("/img/geo-plot.png").default} alt="geo-plot" />
+</picture>
