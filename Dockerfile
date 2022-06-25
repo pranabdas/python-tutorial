@@ -4,7 +4,7 @@
 #                : notebook will be served at http://127.0.0.1:8888 on the host
 #                : jupyter-notebook --ip 0.0.0.0 --port 9999
 
-FROM ubuntu:focal
+FROM ubuntu:jammy
 
 RUN apt update && apt upgrade -y
 

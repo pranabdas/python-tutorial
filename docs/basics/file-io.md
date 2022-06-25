@@ -50,7 +50,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/plot-two-col-data.webp").default} />
+  <source type="image/webp" srcSet={require("/img/plot-two-col-data.webp").default} />
   <img src={require("/img/plot-two-col-data.png").default} alt="plot-two-col-data" />
 </picture>
 
@@ -70,7 +70,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/func-plot.webp").default} />
+  <source type="image/webp" srcSet={require("/img/func-plot.webp").default} />
   <img src={require("/img/func-plot.png").default} alt="func-plot" />
 </picture>
 

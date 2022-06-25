@@ -20,7 +20,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/contour-plot-1.webp").default} />
+  <source type="image/webp" srcSet={require("/img/contour-plot-1.webp").default} />
   <img src={require("/img/contour-plot-1.png").default} alt="contour-plot-1" />
 </picture>
 
@@ -30,7 +30,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/contour-plot-2.webp").default} />
+  <source type="image/webp" srcSet={require("/img/contour-plot-2.webp").default} />
   <img src={require("/img/contour-plot-2.png").default} alt="contour-plot-2" />
 </picture>
 
@@ -41,6 +41,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/contour-plot-3.webp").default} />
+  <source type="image/webp" srcSet={require("/img/contour-plot-3.webp").default} />
   <img src={require("/img/contour-plot-3.png").default} alt="contour-plot-3" />
 </picture>

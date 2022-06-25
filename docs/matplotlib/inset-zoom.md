@@ -22,6 +22,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/inset-zoom.webp").default} />
+  <source type="image/webp" srcSet={require("/img/inset-zoom.webp").default} />
   <img src={require("/img/inset-zoom.png").default} alt="inset-zoom" />
 </picture>

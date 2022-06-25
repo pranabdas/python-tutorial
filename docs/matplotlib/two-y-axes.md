@@ -36,6 +36,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/two-y-axes.webp").default} />
+  <source type="image/webp" srcSet={require("/img/two-y-axes.webp").default} />
   <img src={require("/img/two-y-axes.png").default} alt="two-y-axes" />
 </picture>

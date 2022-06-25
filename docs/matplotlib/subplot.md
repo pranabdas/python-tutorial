@@ -53,6 +53,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/subplot.webp").default} />
+  <source type="image/webp" srcSet={require("/img/subplot.webp").default} />
   <img src={require("/img/subplot.png").default} alt="subplot" />
 </picture>

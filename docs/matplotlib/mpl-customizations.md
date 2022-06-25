@@ -24,13 +24,25 @@ plt.rcParams["figure.figsize"] = (8, 6)
 plt.rcParams["figure.dpi"] = 150
 ```
 
-### Alternative backend
+### Interactive backend
 If you want interactive plots, like ability to zoom, pan, read cursor position
 etc., you can use notebook backend in your jupyter notebook:
 
 ```python
 %matplotlib notebook
 ```
+
+:::danger
+
+The `notebook` interactive mode does not work in Jupyterlab at the moment, it is
+only supported in classic notebooks. However, you can install `ipympl` backend
+and instead use:
+
+```py
+%matplotlib widget
+```
+
+:::
 
 There are also Qt based backend that can show plot on it's own window and allows
 more interactivity.
@@ -54,6 +66,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/custom-color.webp").default} />
+  <source type="image/webp" srcSet={require("/img/custom-color.webp").default} />
   <img src={require("/img/custom-color.png").default} alt="custom-color" />
 </picture>

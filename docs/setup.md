@@ -131,8 +131,8 @@ using [Dockerfile](
 https://github.com/pranabdas/python-tutorial/blob/master/Dockerfile), you can
 adjust according to your needs.
 ```dockerfile title="Dockerfile" showLineNumbers
-# Start from Ubuntu 20.04 LTS
-FROM ubuntu:focal
+# Start from Ubuntu 22.04 LTS
+FROM ubuntu:jammy
 
 # Update OS
 RUN apt update && apt upgrade -y

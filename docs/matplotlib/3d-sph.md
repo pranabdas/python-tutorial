@@ -31,7 +31,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/3d-sph-harm.webp").default} />
+  <source type="image/webp" srcSet={require("/img/3d-sph-harm.webp").default} />
   <img src={require("/img/3d-sph-harm.png").default} alt="3d-sph-harm" />
 </picture>
 
@@ -57,7 +57,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/3d-sph-harm-2.webp").default} />
+  <source type="image/webp" srcSet={require("/img/3d-sph-harm-2.webp").default} />
   <img src={require("/img/3d-sph-harm-2.png").default} alt="3d-sph-harm-2" />
 </picture>
 
@@ -140,7 +140,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/3d-sph-harm-3.webp").default} />
+  <source type="image/webp" srcSet={require("/img/3d-sph-harm-3.webp").default} />
   <img src={require("/img/3d-sph-harm-3.png").default} alt="3d-sph-harm-3" />
 </picture>
 
@@ -187,7 +187,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/3d-earth.webp").default} />
+  <source type="image/webp" srcSet={require("/img/3d-earth.webp").default} />
   <img src={require("/img/3d-earth.png").default} alt="3d-earth" />
 </picture>
 
