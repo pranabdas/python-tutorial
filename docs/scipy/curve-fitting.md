@@ -19,7 +19,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/scipy-curve-fit-data.webp").default} />
+  <source type="image/webp" srcSet={require("/img/scipy-curve-fit-data.webp").default} />
   <img src={require("/img/scipy-curve-fit-data.png").default} alt="scipy-curve-fit-data" />
 </picture>
 
@@ -49,6 +49,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/scipy-curve-fit.webp").default} />
+  <source type="image/webp" srcSet={require("/img/scipy-curve-fit.webp").default} />
   <img src={require("/img/scipy-curve-fit.png").default} alt="scipy-curve-fit" />
 </picture>

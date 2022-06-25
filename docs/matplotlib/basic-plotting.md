@@ -28,7 +28,7 @@ plt.show()
 This produces following output:
 
 <picture>
-  <source type="image/webp" srcset={require("/img/mpl-x-vs-y.webp").default} />
+  <source type="image/webp" srcSet={require("/img/mpl-x-vs-y.webp").default} />
   <img src={require("/img/mpl-x-vs-y.png").default} alt="mpl-x-vs-y" />
 </picture>
 
@@ -41,7 +41,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/mpl-x-vs-y-2.webp").default} />
+  <source type="image/webp" srcSet={require("/img/mpl-x-vs-y-2.webp").default} />
   <img src={require("/img/mpl-x-vs-y-2.png").default} alt="mpl-x-vs-y-2" />
 </picture>
 
@@ -99,7 +99,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/mpl-x-vs-y-3.webp").default} />
+  <source type="image/webp" srcSet={require("/img/mpl-x-vs-y-3.webp").default} />
   <img src={require("/img/mpl-x-vs-y-3.png").default} alt="mpl-x-vs-y-3" />
 </picture>
 

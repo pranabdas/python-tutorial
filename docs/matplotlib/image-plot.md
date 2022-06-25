@@ -74,7 +74,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/image-plot.webp").default} />
+  <source type="image/webp" srcSet={require("/img/image-plot.webp").default} />
   <img src={require("/img/image-plot.png").default} alt="image-plot" />
 </picture>
 
@@ -89,7 +89,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/image-plot-2.webp").default} />
+  <source type="image/webp" srcSet={require("/img/image-plot-2.webp").default} />
   <img src={require("/img/image-plot-2.png").default} alt="image-plot-2" />
 </picture>
 
@@ -102,6 +102,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/pcolormesh.webp").default} />
+  <source type="image/webp" srcSet={require("/img/pcolormesh.webp").default} />
   <img src={require("/img/pcolormesh.png").default} alt="pcolormesh" />
 </picture>

@@ -50,7 +50,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/plot-two-col-data.webp").default} />
+  <source type="image/webp" srcSet={require("/img/plot-two-col-data.webp").default} />
   <img src={require("/img/plot-two-col-data.png").default} alt="plot-two-col-data" />
 </picture>
 
@@ -70,7 +70,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/func-plot.webp").default} />
+  <source type="image/webp" srcSet={require("/img/func-plot.webp").default} />
   <img src={require("/img/func-plot.png").default} alt="func-plot" />
 </picture>
 
@@ -126,3 +126,26 @@ np.savetxt("../datafiles/data.txt", data)
 For loading a bit more complex data file with headers and comments lines, see
 this example: [Quantum Design SQUID data loader notebook](
 https://github.com/pranabdas/python-tutorial/blob/master/notebooks/Quantum-Design-SQIUD-data-loader.ipynb).
+
+:::note
+
+Starting from numpy version 1.23, the `loadtxt` no longer counts the empty lines
+and comment lines towards the `max_rows`. The previous behavior can be achieved
+by:
+```py
+import itertools
+# this counts blank lines towards max_rows
+lines = itertools.islice(open("file"), 0, max_rows)
+result = np.loadtxt(lines, ...)
+```
+
+In case you need to filter out comment lines:
+```py
+import itertools
+lines = itertools.islice(open("file"), start, end)
+# where comment lines starts with '#'
+filtered_lines = itertools.dropwhile(lambda x: x[:1] == '#', lines)
+result = np.loadtxt(filtered_lines, ...)
+```
+
+:::

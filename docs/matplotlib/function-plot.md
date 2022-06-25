@@ -23,6 +23,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/function-plot.webp").default} />
+  <source type="image/webp" srcSet={require("/img/function-plot.webp").default} />
   <img src={require("/img/function-plot.png").default} alt="function-plot" />
 </picture>

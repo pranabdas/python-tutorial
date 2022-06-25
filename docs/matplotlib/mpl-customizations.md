@@ -54,6 +54,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/custom-color.webp").default} />
+  <source type="image/webp" srcSet={require("/img/custom-color.webp").default} />
   <img src={require("/img/custom-color.png").default} alt="custom-color" />
 </picture>

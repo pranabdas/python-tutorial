@@ -26,7 +26,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/scipy-fermi-dirac-function.webp").default} />
+  <source type="image/webp" srcSet={require("/img/scipy-fermi-dirac-function.webp").default} />
   <img src={require("/img/scipy-fermi-dirac-function.png").default} alt="scipy-fermi-dirac-function" />
 </picture>
 
@@ -46,7 +46,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/scipy-gauss-function.webp").default} />
+  <source type="image/webp" srcSet={require("/img/scipy-gauss-function.webp").default} />
   <img src={require("/img/scipy-gauss-function.png").default} alt="scipy-gauss-function" />
 </picture>
 
@@ -67,7 +67,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/scipy-conv.webp").default} />
+  <source type="image/webp" srcSet={require("/img/scipy-conv.webp").default} />
   <img src={require("/img/scipy-conv.png").default} alt="scipy-conv" />
 </picture>
 

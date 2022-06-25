@@ -24,7 +24,7 @@ interactive_plot
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/ipywidgets.webp").default} />
+  <source type="image/webp" srcSet={require("/img/ipywidgets.webp").default} />
   <img src={require("/img/ipywidgets.png").default} alt="ipywidgets" />
 </picture>
 

@@ -108,7 +108,7 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/3d-slices.webp").default} />
+  <source type="image/webp" srcSet={require("/img/3d-slices.webp").default} />
   <img src={require("/img/3d-slices.png").default} alt="3d-slices" />
 </picture>
 
@@ -222,6 +222,6 @@ plt.show()
 ```
 
 <picture>
-  <source type="image/webp" srcset={require("/img/3d-vol.webp").default} />
+  <source type="image/webp" srcSet={require("/img/3d-vol.webp").default} />
   <img src={require("/img/3d-vol.png").default} alt="3d-vol" />
 </picture>
