@@ -22,4 +22,5 @@ yarn-error.log*
 # python related
 /**/.ipynb_checkpoints
 /**/__pycache__
+/**/.mypy_cache
 /venv
