@@ -395,8 +395,10 @@ print(names)
 
 :::caution
 
-Beware of mixinig uppercase and lowercase letters. The methods may not work as
-you might expect as shown above.
+Beware of mixing uppercase and lowercase letters. The methods may not work as
+you might expect as shown above. While comparing strings, the ASCII values of
+the corresponding characters are compared. For example, ASCII code of uppercase
+"A" is 65 while the lowercase "a" is 97.
 
 :::
 
@@ -428,6 +430,24 @@ nihit
 
 </TabItem>
 </Tabs>
+
+:::note info
+
+Lists in python being mutable objects, when we set a list variable to another
+new variable, a new list is not created rather the new variable point to the
+same list.
+
+```python
+a = [ 2, 3, 4]
+b = a
+b[2] = 10
+print(a)  # [2, 3, 10] printed
+```
+
+If we need to clone the list to a new variable, we can use `b = a.copy()`
+instead.
+
+:::
 
 Use `range` function to create numerical lists.
 <Tabs
@@ -903,3 +923,17 @@ for value in my_dict.values():
 ```
 </TabItem>
 </Tabs>
+
+### Sets
+Sets are hash lists. To lookup a member in a hash list has $O(1)$ complexity,
+whereas lookups in a python list has $O(n)$ (n is the length of list).
+
+```python
+s = set()
+s.add(2)
+s.add(4)
+s.add(4)  # set cannot have duplicate items
+print(s)  # {2, 4} printed
+s.remove(2)
+4 in s  # True
+```

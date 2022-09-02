@@ -5,6 +5,11 @@ sidebar_label: Get started
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+Python is a dynamically typed, interpreted language. Python interpreter is
+written in C-language. Interpreter program reads and performs the Python codes/
+instructions. The interpreters interacts with the operating system layer (use
+network, keyboard, mouse, monitor, hard drive etc.).
+
 ### Hello Python
 It is customary to write our first program that prints some message in the
 screen:
@@ -153,6 +158,13 @@ Hello Pranab
 
 </TabItem>
 </Tabs>
+
+For performance improvement and better readability, consider using `join`
+instead of in-place string concatenation.
+```python
+" ".join([greeting, name])
+```
+
 
 ### Loosely typed
 As we have seen, we do not need to define the datatype in python. Interestingly,

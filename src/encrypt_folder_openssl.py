@@ -10,7 +10,7 @@ import subprocess
 import getpass
 
 # ask folder to encrypt
-path = input("Please enter the directoy/path to encrypt: ")
+path = input("Please enter the directory/path to encrypt: ")
 
 # Remove any trailing '/'
 if(path[-1]=='/') :
@@ -31,7 +31,7 @@ except:
     exit()
 
 # ask and confirm password
-passwd = getpass.getpass(prompt="Please eneter encryption password: ")
+passwd = getpass.getpass(prompt="Please enter encryption password: ")
 passwd_2 = getpass.getpass(prompt="Please confirm your password: ")
 
 if (passwd == passwd_2):

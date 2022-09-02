@@ -2,7 +2,8 @@
 title: SQL database
 ---
 We will use sqlite3 to learn the syntax of SQL before working with servers.
-Install sqlite3 in Ubuntu:
+SQLite is a relational database based on SQL (language), and suitable for small
+scale applications. Install sqlite3 in Ubuntu:
 ```bash
 apt install sqlite3
 ```
