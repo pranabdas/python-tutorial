@@ -431,7 +431,7 @@ nihit
 </TabItem>
 </Tabs>
 
-:::note info
+:::info
 
 Lists in python being mutable objects, when we set a list variable to another
 new variable, a new list is not created rather the new variable point to the
@@ -568,6 +568,20 @@ print(squares)
 
 </TabItem>
 </Tabs>
+
+:::note
+
+Python lists are dynamic arrays. When a list of length `n` is created, the
+memory allocator allocates more than `n` contiguous locations for the list.
+There are some advantages doing this, such as, no need to create new list
+allocation and copy items when adding new items (expanding the list size) to the
+end. Also inserting in the middle just  requires shifting. With static array,
+whenever size increases, we need reallocation. However, we do not know how large
+the array will grow, and the extra space allocated during the creation might not
+be enough, in that case we need reallocation (again keeping some extra room).
+One drawback is that Python might allocate more memory than we actually need.
+
+:::
 
 ### Tuples
 Tuples are just like *lists* except that they are immutable. However, we can
@@ -934,6 +948,56 @@ s.add(2)
 s.add(4)
 s.add(4)  # set cannot have duplicate items
 print(s)  # {2, 4} printed
-s.remove(2)
+s.remove(2) # s.discard(2), if element is absent remove method will raise error
 4 in s  # True
+```
+
+Set can also be initialized by following way:
+```python
+s = set({2, 4})
+
+list = (3, 4, 5)
+s2 = set(list)
+
+arr = [5, 6]
+s3 = set(arr)
+```
+
+Size of set:
+```python
+len(s) # 2
+```
+
+Union:
+```python
+s4 = s | s2 # {2, 3, 4, 5}
+
+# or
+s4 = s.union(s2)
+```
+
+Intersection:
+```python
+s5 = s & s2 # {3}
+```
+
+Difference:
+
+```python
+s5 = s.difference(s2) # {2}
+
+# or
+s5 = s - s2
+```
+
+More methods:
+```python
+s.isdisjoint(s2)
+s.issubset(s2)
+s.issuperset(s2)
+```
+
+We can create immutable set by:
+```python
+sf = frozenset({2, 3, 4})
 ```

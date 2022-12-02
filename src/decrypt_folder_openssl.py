@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Program: Encrypt folder recursively using openssl
-Version: 20220105
+Program: Decrypt folder recursively using openssl
+Version: 20221202
 @author: Pranab Das (GitHub: @pranabdas)
 Run: python3 filename.py
 """
@@ -21,7 +21,10 @@ if (path[-1] == "/"):
 path = os.path.abspath(path)
 
 # New directory name
-new_path = path + "_enc"
+if (path[-4:] == "_enc"):
+    new_path = path[:-4] + "_dec"
+else:
+    new_path = path + "_dec"
 
 # check openssl is installed
 try:
@@ -31,17 +34,10 @@ except:
     print("openssl not found. Exiting ...")
     exit()
 
-# ask and confirm password
-passwd = getpass.getpass(prompt="Please enter encryption password: ")
-passwd_confirm = getpass.getpass(prompt="Please confirm your password: ")
+# ask password
+passwd = getpass.getpass(prompt="Please enter decryption password: ")
 
-if (passwd == passwd_confirm):
-    pass
-else:
-    print("Password mismatch! Exiting ...")
-    exit()
-
-print("\nPlease wait. Encrypting...")
+print("\nPlease wait. Decrypting...")
 
 for root, dirs, files in os.walk(path):
 
@@ -52,13 +48,17 @@ for root, dirs, files in os.walk(path):
         except FileExistsError:
             pass
 
-    # encrypt files using openssl
+    # decrypt files
     if (files != []):
         for file in files:
             file_path = root + "/" + file
             new_file_path = file_path.replace(path, new_path) + ".enc"
+            if (file_path[-4:] == ".enc"):
+                new_file_path = file_path.replace(path, new_path)[:-4]
+            else:
+                new_file_path = file_path.replace(path, new_path)
 
-            cmd = f'''openssl enc -e -aes-256-cbc \
+            cmd = f'''openssl enc -d -aes-256-cbc \
                       -salt \
                       -pbkdf2 \
                       -iter 1000000 \
@@ -70,4 +70,4 @@ for root, dirs, files in os.walk(path):
             subprocess.run(cmd, shell=True, check=True, text=True,
                            universal_newlines=True, executable="/bin/bash")
 
-print("\nDone. Encrypted files are placed under:\n", new_path)
+print("\nDone. Decrypted files are placed under:\n", new_path)
