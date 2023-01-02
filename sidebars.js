@@ -21,6 +21,18 @@ module.exports = {
     },
     {
       type: "category",
+      label: "Algorithms",
+      collapsed: true,
+      link: {
+        type: "generated-index",
+      },
+      items: [
+        "algorithms/sorting",
+        "algorithms/hashing",
+      ],
+    },
+    {
+      type: "category",
       label: "Visualization",
       collapsed: true,
       link: {

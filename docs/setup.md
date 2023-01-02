@@ -4,8 +4,8 @@ slug: /
 keywords: ["python", "programming", "tutorial", "jupyter", "matplotlib", "numpy", "pandas", "scipy", "data visualization", "numerical python"]
 ---
 ### Installing Python 3
-If you use macOS (Big Sur/11 or Monterey/12), you should have Python 3 already
-installed. However you might need to install Xcode Command Line Tools, you can
+If you use macOS (Big Sur/11 or higher), you should have Python 3 already
+installed. However, you might need to install Xcode Command Line Tools, you can
 do that by opening Terminal and issuing following command:
 ```bash
 xcode-select --install
@@ -175,3 +175,47 @@ Now we can create a new python 3 notebook, and start writing our python code.
 In order to properly close a notebook, save the notebook (either from *File*
 menu or the save icon) → *Close and Shutdown the Notebook* (from *File* menu),
 and finally shutdown the Jupyter server from the *File* menu → *Shut down*.
+
+### Intel&reg; Distribution for Python
+
+For running computational intensive tasks, you might consider using
+[**Intel&reg; Distribution for Python**](
+https://www.intel.com/content/www/us/en/developer/tools/oneapi/distribution-for-python.html),
+which could be better optimized for Intel processors and perform better in some
+cases. In my experience, it is not consistently better in all scenarios.
+
+Install Intel&reg; distribution for python:
+```bash
+wget https://registrationcenter-download.intel.com/akdlm/irc_nas/19093/l_pythoni39_oneapi_p_2023.0.0.25636_offline.sh
+sudo sh ./l_pythoni39_oneapi_p_2023.0.0.25636_offline.sh -a --silent --eula accept
+```
+
+If you need more tools such as TensorFlow, PyTorch, XGBoost etc., install
+[**Intel&reg; AI Analytics Toolkit**](
+https://www.intel.com/content/www/us/en/developer/tools/oneapi/ai-analytics-toolkit.html)
+instead (some of the packages are available as standalone downloadable component
+as well):
+```bash
+wget https://registrationcenter-download.intel.com/akdlm/irc_nas/19090/l_AIKit_p_2023.0.0.26100_offline.sh
+
+# install everything bundled in the toolkit
+sudo sh ./l_AIKit_p_2023.0.0.26100_offline.sh -a --silent --eula accept
+
+# list components bundled in toolkit
+sh ./l_AIKit_p_2023.0.0.26100_offline.sh -a --list-components
+
+# install subset of components:
+sudo sh ./l_AIKit_p_2023.0.0.26100_offline.sh -a --silent --eula accept --components intel.oneapi.lin.python3:intel.oneapi.lin.tensorflow:intel.oneapi.lin.pytorch
+```
+
+Initialize oneAPI environment:
+```bash
+source /opt/intel/oneapi/setvars.sh
+```
+
+You can confirm intel python:
+```bash
+python --version
+```
+
+You can install additional python packages via `pip` or `conda`.

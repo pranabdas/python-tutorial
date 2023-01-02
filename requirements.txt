@@ -11,5 +11,4 @@ pandas
 scikit-learn
 scipy
 seaborn
-tensorflow
 xlrd
