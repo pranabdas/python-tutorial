@@ -445,7 +445,24 @@ print(a)  # [2, 3, 10] printed
 ```
 
 If we need to clone the list to a new variable, we can use `b = a.copy()`
-instead.
+instead. Alternatively, we can instantiate a new list form the old list
+`b = list(a)`.
+
+Be also careful when passing a list as argument to a function. It will modify
+the existing list, rather than working in a copy to the list.
+
+```python
+list = [2, 3, 4]
+
+def factor(list, factor):
+    for i in range(len(list)):
+        list[i] *= factor
+    # return list # if we return list here, it will point to the same `list` in
+                  # in the main function
+
+factor(list, 2) # we passed `list` to a function which does not return anything
+print(list) # [4, 6, 8]
+```
 
 :::
 
@@ -666,6 +683,14 @@ print(tup)
 
 </TabItem>
 </Tabs>
+
+:::info
+
+A single element tuple is declared by `tup = (4,)`. The reason for this
+requirement is that without the trailing comma, the expression `(4)` is
+interpreted as a simple parenthesized numeric expression.
+
+:::
 
 ### Dictionary
 Python dictionary are list of key value pairs.
