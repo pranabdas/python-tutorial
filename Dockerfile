@@ -11,19 +11,21 @@ RUN apt update && apt upgrade -y
 RUN apt install -y python3 python3-pip
 
 # Install pip packages
-RUN pip3 install jupyterlab \
-    numpy \
-    scipy \
-    matplotlib \
-    pandas \
-    xlrd \
-    openpyxl \
-    seaborn \
+RUN pip3 install \
     bokeh \
     geopandas \
-    scikit-learn \
-    missingno \
     ipywidgets
+    jupyterlab \
+    matplotlib \
+    missingno \
+    networkx \
+    numpy \
+    openpyxl \
+    pandas \
+    scikit-learn \
+    scipy \
+    seaborn \
+    xlrd \
 
 # jupyter-lab settings
 RUN mkdir /etc/jupyter && \

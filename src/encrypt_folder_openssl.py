@@ -60,7 +60,6 @@ for root, dirs, files in os.walk(path):
 
             cmd = f'''openssl enc -e -aes-256-cbc \
                       -salt \
-                      -pbkdf2 \
                       -iter 1000000 \
                       -md sha512 \
                       -k {passwd} \

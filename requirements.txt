@@ -5,6 +5,7 @@ jupyterlab
 matplotlib
 missingno
 mypy
+networkx
 numpy
 openpyxl
 pandas
