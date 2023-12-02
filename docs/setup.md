@@ -32,8 +32,8 @@ sudo apt update
 sudo apt install python3 python3-pip
 ```
 
-If you use Windows, you can go to <https://www.python.org>, download and
-install the latest version of Python 3.
+If you use Windows, you can go to https://www.python.org, download and install
+the latest version of Python 3.
 
 ## pip
 

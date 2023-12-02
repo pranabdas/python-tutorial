@@ -1,13 +1,12 @@
 {
-  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04",
-  // https://github.com/microsoft/vscode-dev-containers/tree/main/containers
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
   "features": {
-    "ghcr.io/devcontainers/features/python:1": {
+    "python": {
       "version": "3.11",
       "installJupyterlab": true
     },
     "node": {
-      "version": "18"
+      "version": "20"
     }
   },
   "customizations": {
@@ -23,17 +22,13 @@
         "files.trimTrailingWhitespace": true,
         "editor.fontSize": 14,
         "editor.minimap.enabled": false,
-        "editor.rulers": [
-          80
-        ],
+        "editor.rulers": [80],
         "workbench.colorCustomizations": {
           "editorRuler.foreground": "#fdb88056"
         },
         "workbench.colorTheme": "Dracula At Night",
         "terminal.integrated.fontSize": 13,
-        "cSpell.enableFiletypes": [
-          "mdx"
-        ]
+        "cSpell.enableFiletypes": ["mdx"]
       },
       "extensions": [
         "bceskavich.theme-dracula-at-night",
@@ -48,7 +43,5 @@
   },
   "postCreateCommand": "if [ -f requirements.txt ]; then pip install -r requirements.txt; fi",
   "waitFor": "postCreateCommand",
-  "forwardPorts": [
-    3000
-  ]
+  "forwardPorts": [3000]
 }

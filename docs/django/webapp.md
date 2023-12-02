@@ -101,10 +101,12 @@ Now we can run our django server :
 ```python
 python3 manage.py runserver
 ```
-and visit <localhost:8000/hello> in our browser. This is our simplest hello app.
-Now let's say we want to greet a specific user by his/her name. We could create
-individual user pages, or we can take the url argument and generate a page based
-on that argument. We write the following view function (`hello/views.py`):
+and visit [localhost:8000/hello](localhost:8000/hello) in our browser. This is
+our simplest hello app. Now let's say we want to greet a specific user by
+his/her name. We could create individual user pages, or we can take the url
+argument and generate a page based on that argument. We write the following view
+function (`hello/views.py`):
+
 ```python
 def greet(request, name):
     """greet anyone"""

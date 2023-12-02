@@ -112,4 +112,4 @@ plt.savefig('fig1.pdf')
 plt.show()
 ```
 
-Now visit <https://matplotlib.org> and explore yourself.
+Now visit https://matplotlib.org and explore yourself.
