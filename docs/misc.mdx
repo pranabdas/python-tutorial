@@ -47,6 +47,92 @@ https://pranabdas.github.io/linux/shell-scripting#running-python-code-in-bash-sc
 
 :::
 
+### Sort dictionary based on keys with order defined in a list
+
+```python
+# orbitals are ordered in terms of stability
+orbital_list = [
+    "1s",
+    "2s",
+    "2p",
+    "3s",
+    "3p",
+    "4s",
+    "3d",
+    "4p",
+    "5s",
+    "4d",
+    "5p",
+    "6s",
+    "4f",
+    "5d",
+    "6p",
+    "7s",
+    "5f",
+    "6d",
+    "7p",
+    "8s",
+]
+
+valence_config = [
+    {
+        "orbital": "1s",
+        "max_occ": 2
+    },
+    {
+        "orbital": "2s",
+        "max_occ": 2
+    },
+    {
+        "orbital": "3s",
+        "max_occ": 2
+    },
+    {
+        "orbital": "2p",
+        "max_occ": 6
+    },
+    {
+        "orbital": "3p",
+        "max_occ": 6
+    },
+    {
+        "orbital": "3d",
+        "max_occ": 10
+    }
+]
+
+# sorted in-place
+valence_config.sort(key=lambda x: orbital_list.index(x["orbital"]))
+
+# print(valence_config)
+# [
+#     {
+#         'orbital': '1s',
+#         'max_occ': 2
+#     },
+#     {
+#         'orbital': '2s',
+#         'max_occ': 2
+#     },
+#     {
+#         'orbital': '2p',
+#         'max_occ': 6
+#     },
+#     {
+#         'orbital': '3s',
+#         'max_occ': 2
+#     },
+#     {
+#         'orbital': '3p',
+#         'max_occ': 6
+#     },
+#     {
+#         'orbital': '3d',
+#         'max_occ': 10
+#     }
+# ]
+```
+
 ### Jupyter notebooks of various python projects
 
 - [Quantum Design SQUID data loader](
