@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpython_tutorial=self.webpackChunkpython_tutorial||[]).push([[2759],{154:t=>{t.exports=JSON.parse('{"title":"Basics","slug":"/category/basics","permalink":"/python-tutorial/category/basics","navigation":{"previous":{"title":"Setup","permalink":"/python-tutorial/"},"next":{"title":"Get started","permalink":"/python-tutorial/basics/gs"}}}')}}]);
