@@ -136,6 +136,28 @@ and include `venv` path in the `.gitigone`.
 
 :::
 
+## venv
+
+The inbuilt `venv` Python3 module serves the same purpose as the popular
+[virtualenv](#virtualenv) package. Although, `venv` lacks some feature sets of
+`virtualenv`, it is probably sufficient in most cases.
+
+Create virtual environment using `venv`:
+```bash
+python -m venv <virtual-env-name>
+python -m venv venv
+```
+
+Other commands are same as `virtualenv`. Activate virtual environment:
+```bash
+source venv/bin/activate
+```
+
+Deactivate/exit virtual environment:
+```bash
+deactivate
+```
+
 ## Pyenv
 
 If you need multiple versions of Python (say, different projects requires
