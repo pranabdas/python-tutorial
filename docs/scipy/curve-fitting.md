@@ -18,10 +18,7 @@ plt.plot(x, y, '.')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/scipy-curve-fit-data.webp").default} />
-  <img src={require("/img/scipy-curve-fit-data.png").default} alt="scipy-curve-fit-data" />
-</picture>
+<img src={require("/img/scipy-curve-fit-data.webp").default} alt="scipy-curve-fit-data" />
 
 ```python title="Input:" showLineNumbers
 from scipy import optimize
@@ -48,7 +45,4 @@ plt.legend(frameon=False, loc="upper center")
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/scipy-curve-fit.webp").default} />
-  <img src={require("/img/scipy-curve-fit.png").default} alt="scipy-curve-fit" />
-</picture>
+<img src={require("/img/scipy-curve-fit.webp").default} alt="scipy-curve-fit" />

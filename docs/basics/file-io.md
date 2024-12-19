@@ -49,10 +49,7 @@ plt.ylabel('Intensity (a.u.)')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/plot-two-col-data.webp").default} />
-  <img src={require("/img/plot-two-col-data.png").default} alt="plot-two-col-data" />
-</picture>
+<img src={require("/img/plot-two-col-data.webp").default} alt="plot-two-col-data" />
 
 ### Writing data to file
 Now that we are able to read data from a file, and use in our program, let us
@@ -69,10 +66,7 @@ plt.ylabel('f(x)')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/func-plot.webp").default} />
-  <img src={require("/img/func-plot.png").default} alt="func-plot" />
-</picture>
+<img src={require("/img/func-plot.webp").default} alt="func-plot" />
 
 We can save the data as follows:
 ```python

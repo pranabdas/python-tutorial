@@ -21,7 +21,4 @@ axins.set_yticklabels('')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/inset-zoom.webp").default} />
-  <img src={require("/img/inset-zoom.png").default} alt="inset-zoom" />
-</picture>
+<img src={require("/img/inset-zoom.webp").default} alt="inset-zoom" />

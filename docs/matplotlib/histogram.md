@@ -17,4 +17,4 @@ plt.ylabel('freq')
 plt.show()
 ```
 
-![histogram-plot](/img/histogram.png)
+<img src={require("/img/histogram.webp").default} alt="histogram" />

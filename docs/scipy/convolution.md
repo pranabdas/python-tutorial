@@ -25,10 +25,7 @@ plt.ylabel('$f(E, kT)$')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/scipy-fermi-dirac-function.webp").default} />
-  <img src={require("/img/scipy-fermi-dirac-function.png").default} alt="scipy-fermi-dirac-function" />
-</picture>
+<img src={require("/img/scipy-fermi-dirac-function.webp").default} alt="scipy-fermi-dirac-function" />
 
 ```python showLineNumbers
 # Define normalized Gassian funtion
@@ -45,10 +42,7 @@ plt.ylabel('$g(x)$')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/scipy-gauss-function.webp").default} />
-  <img src={require("/img/scipy-gauss-function.png").default} alt="scipy-gauss-function" />
-</picture>
+<img src={require("/img/scipy-gauss-function.webp").default} alt="scipy-gauss-function" />
 
 ```python showLineNumbers
 fx = f(E, kT)
@@ -66,10 +60,7 @@ plt.legend(frameon=False)
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/scipy-conv.webp").default} />
-  <img src={require("/img/scipy-conv.png").default} alt="scipy-conv" />
-</picture>
+<img src={require("/img/scipy-conv.webp").default} alt="scipy-conv" />
 
 :::note
 

@@ -107,10 +107,7 @@ plt.axis('off')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/3d-slices.webp").default} />
-  <img src={require("/img/3d-slices.png").default} alt="3d-slices" />
-</picture>
+<img src={require("/img/3d-slices.webp").default} alt="3d-slices" />
 
 3D Volume plot:
 
@@ -221,7 +218,4 @@ plt.axis('off')
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/3d-vol.webp").default} />
-  <img src={require("/img/3d-vol.png").default} alt="3d-vol" />
-</picture>
+<img src={require("/img/3d-vol.webp").default} alt="3d-vol" />

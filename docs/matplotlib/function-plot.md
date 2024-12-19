@@ -22,7 +22,4 @@ plt.xlim(0, )
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/function-plot.webp").default} />
-  <img src={require("/img/function-plot.png").default} alt="function-plot" />
-</picture>
+<img src={require("/img/function-plot.webp").default} alt="function-plot" />

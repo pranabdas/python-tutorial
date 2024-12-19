@@ -65,7 +65,4 @@ for i in range(10):
 plt.show()
 ```
 
-<picture>
-  <source type="image/webp" srcSet={require("/img/custom-color.webp").default} />
-  <img src={require("/img/custom-color.png").default} alt="custom-color" />
-</picture>
+<img src={require("/img/custom-color.webp").default} alt="custom-color" />
