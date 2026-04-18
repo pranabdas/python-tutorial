@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpython_tutorial=self.webpackChunkpython_tutorial||[]).push([["8293"],{1716(t){t.exports=JSON.parse('{"metadata":{"permalink":"/python-tutorial/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":0,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
