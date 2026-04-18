@@ -203,6 +203,27 @@ if (id == 0):
     print("There are ", p, "MPI processes running.")
 ```
 
+### Multi-threading
+
+Many python libraries uses `numpy`, `scipy`, `pytorch` as backend, which can
+take advantage of multi-threading.
+
+```python showLineNumbers
+import os
+
+# set number of CPUs to run on
+ncore = "2"
+
+# set env variables
+# have to set these before importing numpy or others
+os.environ["OMP_NUM_THREADS"] = ncore
+os.environ["OPENBLAS_NUM_THREADS"] = ncore
+os.environ["MKL_NUM_THREADS"] = ncore
+os.environ["VECLIB_MAXIMUM_THREADS"] = ncore
+os.environ["NUMEXPR_NUM_THREADS"] = ncore
+```
+
 ## Resources
 - https://www.youtube.com/watch?v=fKl2JW_qrso
 - https://mpi4py.readthedocs.io/
+- https://rcpedia.stanford.edu/_user_guide/parallel_processing_python/
