@@ -23,7 +23,7 @@ output = interactive_plot.children[-1]
 interactive_plot
 ```
 
-<img src={require("/img/ipywidgets.webp").default} alt="ipywidgets" />
+<img src={require("/img/ipywidgets.webp").default} className="inv-hue-rot-180" alt="ipywidgets" />
 
 Please try the interactive slider in a jupyter notebook, and see how the figure
 changes.

@@ -30,7 +30,7 @@ plt.axis('off')
 plt.show()
 ```
 
-<img src={require("/img/3d-sph-harm.webp").default} alt="3d-sph-harm" />
+<img src={require("/img/3d-sph-harm.webp").default} className="inv-hue-rot-180" alt="3d-sph-harm" />
 
 ```python showLineNumbers
 m, l = 2, 3
@@ -53,7 +53,7 @@ plt.axis('off')
 plt.show()
 ```
 
-<img src={require("/img/3d-sph-harm-2.webp").default} alt="3d-sph-harm-2" />
+<img src={require("/img/3d-sph-harm-2.webp").default} className="inv-hue-rot-180" alt="3d-sph-harm-2" />
 
 ```python showLineNumbers
 m, l = 2, 3
@@ -133,7 +133,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img src={require("/img/3d-sph-harm-3.webp").default} alt="3d-sph-harm-3" />
+<img src={require("/img/3d-sph-harm-3.webp").default} className="inv-hue-rot-180" alt="3d-sph-harm-3" />
 
 ### Wrapping an image onto a sphere
 

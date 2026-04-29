@@ -17,4 +17,4 @@ plt.ylabel('freq')
 plt.show()
 ```
 
-<img src={require("/img/histogram.webp").default} alt="histogram" />
+<img src={require("/img/histogram.webp").default} className="inv-hue-rot-180" alt="histogram" />

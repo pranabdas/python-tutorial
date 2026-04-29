@@ -22,4 +22,4 @@ plt.xlim(0, )
 plt.show()
 ```
 
-<img src={require("/img/function-plot.webp").default} alt="function-plot" />
+<img src={require("/img/function-plot.webp").default} className="inv-hue-rot-180" alt="function-plot" />

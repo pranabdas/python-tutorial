@@ -21,4 +21,4 @@ axins.set_yticklabels('')
 plt.show()
 ```
 
-<img src={require("/img/inset-zoom.webp").default} alt="inset-zoom" />
+<img src={require("/img/inset-zoom.webp").default} className="inv-hue-rot-180" alt="inset-zoom" />

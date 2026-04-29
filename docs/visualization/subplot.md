@@ -52,4 +52,4 @@ fig.text(0.51, 0.5, "D", fontsize=16, weight='bold')
 plt.show()
 ```
 
-<img src={require("/img/subplot.webp").default} alt="subplot" />
+<img src={require("/img/subplot.webp").default} className="inv-hue-rot-180" alt="subplot" />

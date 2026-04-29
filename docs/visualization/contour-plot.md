@@ -19,14 +19,14 @@ plt.contour(X, Y, Z)
 plt.show()
 ```
 
-<img src={require("/img/contour-plot-1.webp").default} alt="contour-plot-1" />
+<img src={require("/img/contour-plot-1.webp").default} className="inv-hue-rot-180" alt="contour-plot-1" />
 
 ```python
 plt.contour(X, Y, Z, 10, cmap='RdGy')
 plt.show()
 ```
 
-<img src={require("/img/contour-plot-2.webp").default} alt="contour-plot-2" />
+<img src={require("/img/contour-plot-2.webp").default} className="inv-hue-rot-180" alt="contour-plot-2" />
 
 ```python
 plt.contourf(X, Y, Z, 20, cmap='RdGy')
@@ -34,4 +34,4 @@ plt.colorbar()
 plt.show()
 ```
 
-<img src={require("/img/contour-plot-3.webp").default} alt="contour-plot-3" />
+<img src={require("/img/contour-plot-3.webp").default} className="inv-hue-rot-180" alt="contour-plot-3" />
