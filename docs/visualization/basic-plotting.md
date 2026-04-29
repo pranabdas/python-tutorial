@@ -27,7 +27,7 @@ plt.show()
 
 This produces following output:
 
-<img src={require("/img/mpl-x-vs-y.webp").default} alt="mpl-x-vs-y" />
+<img src={require("/img/mpl-x-vs-y.webp").default} className="inv-hue-rot-180" alt="mpl-x-vs-y" />
 
 Now let's improve the figure a bit. The plt.plot accepts 3 basic arguments in
 the following order: (x, y, format). This format is a short hand combination of
@@ -37,7 +37,7 @@ plt.plot(x, y, 'ro-')
 plt.show()
 ```
 
-<img src={require("/img/mpl-x-vs-y-2.webp").default} alt="mpl-x-vs-y-2" />
+<img src={require("/img/mpl-x-vs-y-2.webp").default} className="inv-hue-rot-180" alt="mpl-x-vs-y-2" />
 
 More customizations:
 ```python showLineNumbers
@@ -92,7 +92,7 @@ plt.ylim(1, 1200)
 plt.show()
 ```
 
-<img src={require("/img/mpl-x-vs-y-3.webp").default} alt="mpl-x-vs-y-3" />
+<img src={require("/img/mpl-x-vs-y-3.webp").default} className="inv-hue-rot-180" alt="mpl-x-vs-y-3" />
 
 ### Saving plot to file
 ```python showLineNumbers

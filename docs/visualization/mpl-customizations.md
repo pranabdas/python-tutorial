@@ -65,4 +65,4 @@ for i in range(10):
 plt.show()
 ```
 
-<img src={require("/img/custom-color.webp").default} alt="custom-color" />
+<img src={require("/img/custom-color.webp").default} className="inv-hue-rot-180" alt="custom-color" />

@@ -35,4 +35,4 @@ fig.tight_layout()  # otherwise the right y-label is slightly clipped
 plt.show()
 ```
 
-<img src={require("/img/two-y-axes.webp").default} alt="two-y-axes" />
+<img src={require("/img/two-y-axes.webp").default} className="inv-hue-rot-180" alt="two-y-axes" />
